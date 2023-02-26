@@ -1,0 +1,11 @@
+.course-container{
+    margin-top: 5rem;
+}
+.course-container>h1{
+    color: #ff8d1e;
+}
+.course-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

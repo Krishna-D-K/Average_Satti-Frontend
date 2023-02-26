@@ -1,0 +1,13 @@
+.contribute-container{
+    margin-top: 5rem;
+}
+.contribute-container>h2{
+    color: #ff8d1e;
+}
+.content-details{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.content-contribute{
+    color: aliceblue;
+}

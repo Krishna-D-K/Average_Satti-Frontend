@@ -1,0 +1,42 @@
+.homeBg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 80vh;
+    width: 100%;
+}
+.homeBg::after{
+    content: "";
+    background-image: url("../images/home_background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 80vh;
+    width: 100%;
+    opacity: 50%;
+}
+.homeHeading{
+    color: #28a745;
+    font-size: 2rem;
+}
+.homeContent{
+    position: absolute;
+    left: 0;
+    top: 90vh;
+}
+.Text{
+    color: #28a745;
+    font-size: 1.4rem;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    width: 70%;
+    margin: 0 auto;
+}
