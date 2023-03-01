@@ -56,7 +56,18 @@ const Accounts = () => {
                             )
                         }
                         else{
-                            return null;
+                            return (
+                                <tr>
+                                    <td data-th="S.No" style={{"color": "wheat"}}>{index+1}</td>
+                                    <td data-th="Name">YOU</td>
+                                    <td data-th="Role">{val.role}</td>
+                                    <td data-th="Roll No">{val.rollNo}</td>
+                                    {/* <td data-th="Email">{val.email}</td>
+                                    <td data-th="Phone">{val.phone}</td> */}
+                                    <td data-th="Email">krishnadk8203@gmail.com</td>
+                                    <td data-th="Phone">8446508203</td>
+                                </tr>
+                            );
                         }
                     })}
                 </table>

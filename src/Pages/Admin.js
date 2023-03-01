@@ -8,6 +8,7 @@ import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 import Accounts from '../Components/Accounts';
 import CurrentData from '../Components/CurrentData';
+import AddUser from '../Components/AddUser';
 
 export default function Admin() {
     const { user } = useAuthContext();
@@ -33,11 +34,11 @@ export default function Admin() {
                         </div> <br />
                         <div className="admin-list">
                             <ul>
-                                <li onClick={() => setTitle("Profile")}>Profile</li>
-                                <li onClick={() => setTitle("Courses")}>Courses</li>
-                                <li onClick={() => setTitle("Current Data")}>Current Data</li>
-                                <li onClick={() => setTitle("Accounts")}>Accounts</li>
-                                <li onClick={() => setTitle("profile")}>Profile</li>
+                                <li className="list-group-item d-flex justify-content-between align-items-center" onClick={() => setTitle("Profile")}><span><i class="fa-solid fa-user" style={{"color":"wheat"}}></i>&emsp;Profile</span><span class="badge badge-info badge-pill">14</span></li>
+                                <li onClick={() => setTitle("Courses")}><i class="fa-solid fa-list-ul" style={{"color":"wheat"}}></i>&emsp;Courses</li>
+                                <li onClick={() => setTitle("Current Data")}><i class="fa-solid fa-database" style={{"color":"wheat"}}></i>&emsp;Current Data</li>
+                                <li onClick={() => setTitle("Accounts")}><i class="fa-regular fa-address-card" style={{"color":"wheat"}}></i>&emsp;Accounts</li>
+                                <li onClick={() => setTitle("Add User")}><i class="fa-regular fa-square-plus" style={{"color":"wheat"}}></i>&emsp;Add User</li>
                                 <li onClick={() => setTitle("profile")}>Profile</li>
                             </ul>
                         </div>
@@ -51,6 +52,7 @@ export default function Admin() {
                             {title === "Add Course" && <AddCourse exit={()=>setTitle("Courses")}/>}
                             {title === "Current Data" && <CurrentData />}
                             {title === "Accounts" && <Accounts />}
+                            {title === "Add User" && <AddUser user = {user}/>}
                         </div>
                     </div>
                 </div>

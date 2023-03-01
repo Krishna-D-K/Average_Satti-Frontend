@@ -25,6 +25,16 @@
   width: 6.5em;
   display: inline-block;
 }
+.actions-icon:hover{
+  cursor: pointer;
+}
+#edit-data-input{
+  background-color: transparent;
+  margin: 0;
+  width: min-content;
+  color: aliceblue;
+  padding: 0;
+}
 @media (min-width: 480px) {
   .rwd-table td:before {
     display: none;
