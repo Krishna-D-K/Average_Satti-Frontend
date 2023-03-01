@@ -10,4 +10,65 @@
 }
 .content-contribute{
     color: aliceblue;
+    margin: 0 auto;
+    width: 90%;
 }
+.content-data{
+    width: 90%;
+    margin: 2rem auto ;
+}
+.accordion {
+    background-color: #8080805e;
+    color: wheat;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 0.2rem 0;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    transition: 0.4s;
+  }
+  
+  .accordion-active, .accordion:hover {
+    background-color: #8080808a;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .accordion-active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    background-color: #8080808a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding: 0 0.2rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+  }
+  .accordion-icons>i{
+    color: wheat;
+  }
+  .accordion-icons>a{
+    color: wheat;
+  }
+  .accordion-icons>a:hover{
+    color: aqua;
+    cursor: pointer;;
+  }
+  .accordion-icons>i:hover{
+    color: aqua;
+    cursor: pointer;;
+  }

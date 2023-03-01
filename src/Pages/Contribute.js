@@ -12,6 +12,7 @@ export default function Contribute() {
   const [name, setName] = useState(null);
   const [rollNo, setRollNo] = useState(null);
   const [desc, setDesc] = useState(null);
+  const [url, setUrl] = useState(null);
   const [anonymous, setAnonymous] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -21,7 +22,10 @@ export default function Contribute() {
     formdata.append("file", file);
     formdata.append("type", type);
     formdata.append("name", name);
+    formdata.append("semester", details.semester);
+    formdata.append("courseCode", code);
     formdata.append("rollNo", rollNo);
+    formdata.append("url", url);
     formdata.append("desc", desc);
     formdata.append("anonymous", anonymous);
     for(let obj of formdata){
@@ -92,11 +96,11 @@ export default function Contribute() {
             <div style={{ "display": "flex", "alignItems": "center" }}>
               <div className="form-group" style={{ "width": "60%", "display": "flex", "alignItems": "center", "justifyContent": "end" }}>
                 <label htmlFor="exampleInputEmail1">Your Name &emsp;</label>
-                <input type="text" className="form-control" placeholder='Name' value={name} onChange={(e)=>setName(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" style={{ "width": "60%", "color": "#000000"}} required />
+                <input type="text" className="form-control" placeholder='Enter you name' value={name} onChange={(e)=>setName(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" style={{ "width": "60%", "color": "#000000"}} required />
               </div>
               <div className="form-group" style={{ "width": "60%", "display": "flex", "alignItems": "center", "justifyContent": "end" }}>
                 <label htmlFor="exampleInputEmail1">Roll Number &emsp;</label>
-                <input type="text" className="form-control" placeholder='Roll Number' value={rollNo} onChange={(e)=>setRollNo(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" style={{ "width": "60%", "color": "#000000" }} required />
+                <input type="text" className="form-control" placeholder='Enter your Roll Number' value={rollNo} onChange={(e)=>setRollNo(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" style={{ "width": "60%", "color": "#000000" }} required />
               </div>
             </div>
             <div style={{ "display": "flex", "alignItems": "center" }}>
@@ -106,7 +110,7 @@ export default function Contribute() {
                   <option value="">-SELECT-</option>
                   <option value="Assignment">Assignment</option><option value="Test">Test</option>
                   <option value="Reference Material">Reference Material</option><option value="Question Paper">Question Paper</option>
-                  <option value="Notes">Notes</option>
+                  <option value="Notes">Notes</option><option value="Playlist">Playlist</option>
                 </select>
               </div>
               {type !== null &&
@@ -116,11 +120,23 @@ export default function Contribute() {
                 </div>
               }
             </div>
-            {type !== null && <>
+            {type !== null && type!=="Playlist" && <>
               <div style={{ "display": "flex", "alignItems": "center" }}>
                 <div className="form-group" style={{ "width": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" }}>
                   <label htmlFor="exampleInputEmail1">Upload File &emsp;</label>
                   <input type="file" className="form-control" placeholder='Name' onChange={(e)=>setFile(e.target.files[0])} id="exampleInputEmail1" aria-describedby="emailHelp" style={{ "width": "60%", "color": "#000000" }} />
+                </div>
+              </div>
+
+              <input type="checkbox" name="anonymous" onChange={(e)=> setAnonymous(e.target.checked)} id="anonymous" /><label htmlFor='anonymous'>&ensp; Post as anonymous <i>(The name and roll number will be stored in the database but not displayed over the website.)</i></label>
+              <span style={{ "display": "flex", "justifyContent": "center" }}><button type="submit" className="btn btn-primary" style={{ "textAlign": "center", "width": "20%" }}>Submit</button></span>
+            </>
+            }
+            {type !== null && type==="Playlist" && <>
+              <div style={{ "display": "flex", "alignItems": "center" }}>
+                <div className="form-group" style={{ "width": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" }}>
+                  <label htmlFor="exampleInputEmail1">Insert playlist link &emsp;</label>
+                  <input type="text" className="form-control" value={url} placeholder='Link' onChange={(e)=>setUrl(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" style={{ "width": "60%", "color": "#000000" }} />
                 </div>
               </div>
 
