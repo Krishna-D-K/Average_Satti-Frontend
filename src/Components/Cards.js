@@ -8,7 +8,6 @@ export default function Cards(props) {
     const [confirmbox, setConfirmbox] = useState(false);
     const { user } = useAuthContext();
     let adminDisplay = "inline";
-    console.log(adminDisplay)
     const deleteCourse = async (id) => {
         if (user) {
             try {

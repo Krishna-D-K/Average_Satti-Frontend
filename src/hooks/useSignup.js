@@ -18,6 +18,7 @@ export const useSignup =()=>{
                 setError(`** ${res.data}`);
             }
             else{
+                console.log(res.data);
                 localStorage.setItem("user", JSON.stringify(res.data));
                 dispatch({type: "LOGIN", payload: JSON.stringify(res.data)})
 

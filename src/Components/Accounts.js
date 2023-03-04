@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Apiservice from "../Apiservice";
 import { useAuthContext } from "../hooks/useAuthContext";
 import '../Styles/AccountsStyle.css';
+import Loader from "./Loader";
 
 const Accounts = () => {
 
@@ -31,7 +32,7 @@ const Accounts = () => {
     return (
         <>
             <div style={{ "display": "flex", "justifyContent": "center" }}>
-                <table class="rwd-table">
+                {data !== null && <table class="rwd-table">
                     <tr>
                         <th>S.No</th>
                         <th>Name</th>
@@ -40,7 +41,7 @@ const Accounts = () => {
                         <th>Email</th>
                         <th>Phone</th>
                     </tr>
-                    {data !== null && data.map((val, index) => {
+                    {data.map((val, index) => {
                         if(val.rollNo!==user.rollNo){
                             return(
                                 <tr>
@@ -59,7 +60,7 @@ const Accounts = () => {
                             return (
                                 <tr>
                                     <td data-th="S.No" style={{"color": "wheat"}}>{index+1}</td>
-                                    <td data-th="Name">YOU</td>
+                                    <td data-th="Name"><span style={{"color": "#48ff72"}}>YOU</span></td>
                                     <td data-th="Role">{val.role}</td>
                                     <td data-th="Roll No">{val.rollNo}</td>
                                     {/* <td data-th="Email">{val.email}</td>
@@ -70,7 +71,8 @@ const Accounts = () => {
                             );
                         }
                     })}
-                </table>
+                </table>}
+                {data===null && <Loader />}
             </div>
         </>
     );

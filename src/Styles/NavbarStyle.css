@@ -1,0 +1,145 @@
+.navbar-container{
+  height: 50vh;
+  width: 50vh;
+  background-color: aquamarine;
+  margin: auto auto;
+  text-align: center;
+}
+small {
+  font-size: 12px;
+  text-transform: lowercase;
+  font-weight: 300;
+  text-align: center;
+  display: block;
+}
+.navicon {
+  background: transparent;
+  margin: 80px auto 40px;
+  position: fixed;
+  top: 0rem;
+  right: 10vw;
+  height: 30px;
+  width: 50px;
+  display: block;
+  z-index: 99;
+  transition: linear 0.5s all;
+}
+.navicon:hover{
+  cursor: pointer;
+}
+.navicon:before, .navicon:after {
+  background: #fff;
+  backface-visibility: hidden;
+  content: "";
+  height: 3px;
+  left: 0;
+  transition: 0.8s ease;
+  width: 45px;
+  border-radius: 1rem;
+}
+.navicon:before {
+  box-shadow: #fff 0 14px 0 0;
+  position: absolute;
+  top: 0;
+}
+.navicon:after {
+  position: absolute;
+  top: 28px;
+}
+.navicon--active {
+  margin-top: 20px;
+  transition: linear 0.5s all;
+}
+.navicon--active:before {
+  box-shadow: transparent 0 0 0 0;
+  top: 15px;
+  transform: rotate(225deg);
+}
+.navicon--active:after {
+  top: 15px;
+  transform: rotate(315deg);
+}
+.toggle {
+  width: 10%;
+  background-color: #000000e6;
+  padding: 15px;
+  opacity: 0;
+  transition: ease-in 0.5s all;
+  transform: translateY(-200%);
+  min-width: 320px;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle--active {
+  opacity: 1;
+  transition: ease-in 0.5s all;
+  transform: translateY(0);
+  height: 100vh;
+  width: 99vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle__menu {
+  margin-bottom: 25px;
+  text-align: center;
+  padding: 0;
+}
+.toggle__menu li {
+  width: 25%;
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+}
+.toggle__menu li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: linear 0.5s all;
+  font-weight: 500;
+  padding: 5px 0;
+}
+.toggle__menu li a span {
+  text-transform: lowercase;
+}
+.toggle__menu li a:hover {
+  color: #db5523;
+  border-bottom: 2px solid #db5523;
+  transition: linear 0.5s all;
+  transform: scale(1.15);
+  font-weight: 700;
+}
+.social {
+  display: block;
+  width: 70%;
+  margin: 25px auto;
+  text-align: center;
+  font-size: 0;
+}
+.social li {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+.social li a {
+  text-align: center;
+  color: #000;
+  font-size: 25px;
+  transition: linear 0.5s all;
+}
+.social li a:hover {
+  color: #db5523;
+  transition: linear 0.5s all;
+}

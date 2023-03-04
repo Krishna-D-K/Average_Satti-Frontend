@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Apiservice from '../Apiservice';
+import Loader from '../Components/Loader';
 import "../Styles/ContentStyle.css";
 
 export default function Content() {
@@ -51,11 +52,11 @@ export default function Content() {
                     )}
                 </div>
                 <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
-                <div className="content-data">
+                {data !== null && <><div className="content-data">
                     <button class="accordion" id="Assingment" onClick={() => accordian("Assingment")}>Assignments</button>
                     <div class="panel">
                         <ul class="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
-                            {data !== null && data.filter(element => element.type === "Assingment").map((element, index) => {
+                            {data !== null && data.filter(element => element.type === "Assignment").map((element, index) => {
                                 return (
                                     <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }}>
                                         <p style={{ "float": "left", "color": "#6fb7ff" }}>
@@ -178,9 +179,10 @@ export default function Content() {
                         {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                     </div>
                 </div>
-                <div className="content-contribute">
-                    Didn't find what you are looking ? {details !== null && <Link to={`/contribute/${details.courseCode}`}>Contribute</Link>}
-                </div>
+                    <div className="content-contribute">
+                        Didn't find what you are looking ? {details !== null && <Link to={`/contribute/${details.courseCode}`}>Contribute</Link>}
+                    </div></>}
+                {data === null && <div style={{ "display": "flex", "justifyContent": "center" }}><Loader /></div>}
             </div>
         </>
     )

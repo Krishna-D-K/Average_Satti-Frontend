@@ -15,6 +15,7 @@ export default function Admin() {
     const [title, setTitle] = useState(" ");
     const { logout } = useLogout();
     const name = user.name, role = user.role;
+    console.log(name, role);
     if(user!==null){
         return (
             <>

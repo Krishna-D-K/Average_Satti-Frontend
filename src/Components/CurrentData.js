@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Apiservice from "../Apiservice";
 import { useAuthContext } from "../hooks/useAuthContext";
 import '../Styles/AccountsStyle.css';
+import Loader from "./Loader";
 
 const CurrentData = () => {
     const { user } = useAuthContext();
@@ -29,8 +30,16 @@ const CurrentData = () => {
     }
 
     const actions = (type, data, key) => {
-        setFileID(data.fileID);
-        (data.type === "Playlist") ? isPlaylist("true") : isPlaylist("false");
+        console.log(data);
+        
+        if(data.type === "Playlist"){
+            isPlaylist("true");
+            setFileID(data._id);
+        }
+        else{
+            isPlaylist("false");
+            setFileID(data.fileID);
+        }
         setKey(key);
         if (type === "delete") {
             setConfirm(true);
@@ -38,7 +47,6 @@ const CurrentData = () => {
         else {
             setDesc(data.description);
             setEdit(true);
-
         }
     }
 
@@ -52,6 +60,7 @@ const CurrentData = () => {
     const deleteData = async () => {
         console.log(fileID, playlist);
         try {
+            console.log()
             await axios.delete(Apiservice + `/content/upload/${playlist}/${fileID}`).then((res) => {
                 exitDelete();
             })
@@ -87,7 +96,7 @@ const CurrentData = () => {
     return (
         <>
             <div style={{ "display": "flex", "justifyContent": "center" }}>
-                <table className="rwd-table">
+                {data!==null && <table className="rwd-table">
                     <tr>
                         <th>S.No</th>
                         <th>Semester</th>
@@ -154,7 +163,8 @@ const CurrentData = () => {
                         )
 
                     })}
-                </table>
+                </table>}
+                {data===null && <Loader />}
             </div>
         </>
     );

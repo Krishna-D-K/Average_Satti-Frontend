@@ -1,33 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import "../Styles/NavbarStyle.css";
 
 export default function Navbar() {
+  const [navicon, setNavicon] = useState('navicon')
+  const [toggle, setToggle] = useState('toggle');
+
+  const renderNavbar = (e) => {
+    e.preventDefault();
+    (navicon === "navicon") ? setNavicon("navicon navicon--active") : setNavicon("navicon");
+    (toggle === "toggle") ? setToggle("toggle toggle--active") : setToggle("toggle");
+  }
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark" style={{"position": "fixed", "top": "0", "width": "100%", "backdropFilter": "blur(5px)", "zIndex": "2"}}>
-        <Link className="navbar-brand" to="/">Navbar</Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto" style={{"fontSize": "1.1rem"}}>
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/courses">Courses</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
-            </li>
+    <div>
+      <span className={navicon} onClick={renderNavbar} />
+      <div className={toggle}>
+        <div className="navbar-container">
+          <h1>Toggle Menu</h1>
+          <ul className="toggle__menu">
+            <li onClick={renderNavbar}><Link to="/">Home</Link></li>
+            <li onClick={renderNavbar}><Link to="/courses">Courses</Link></li>
+            <li onClick={renderNavbar}><Link to="/login">Login</Link></li>
+            <li onClick={renderNavbar}><Link to="/about">About</Link></li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
-          </form>
+          <ul className="social">
+            <li><a href="https://github.com/Kirbaba"><i className="fa fa-github" /></a></li>
+            <li><a href="https://twitter.com/VladKirbaba"><i className="fa fa-twitter" /></a></li>
+            <li> <a href="https://www.facebook.com/VladislavKirbaba"><i className="fa fa-facebook" /></a></li>
+            <li><a href="https://vk.com/vladislavkirbaba"> <i className="fa fa-vk" /></a></li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </div>
+
   )
 }

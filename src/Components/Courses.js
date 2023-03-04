@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Apiservice from '../Apiservice';
 import Cards from './Cards'
 import EditCourse from './EditCourse';
+import Loader from './Loader';
 
 export default function Courses(props) {
     const [data, setData] = useState(null);
@@ -35,6 +36,7 @@ export default function Courses(props) {
                 return <Cards data = {value} index = {index} refresh = {()=>{props.refresh()}} edit={()=>{setEditmode(true);setEditdata(value)}}/>
             })}
             {data!==null && editmode===true && <EditCourse data = {editdata} refresh = {()=>{props.refresh(); setEditmode(false)}}/>}
+            {data===null && <div style={{'display': "flex", "justifyContent": "center"}}><Loader /></div>}
         </>
     )
 }
