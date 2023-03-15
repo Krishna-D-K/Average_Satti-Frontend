@@ -1,9 +1,10 @@
 .navbar-container{
-  height: 50vh;
   width: 50vh;
   background-color: aquamarine;
   margin: auto auto;
   text-align: center;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 small {
   font-size: 12px;
@@ -21,7 +22,7 @@ small {
   height: 30px;
   width: 50px;
   display: block;
-  z-index: 99;
+  z-index: 10;
   transition: linear 0.5s all;
 }
 .navicon:hover{
@@ -67,7 +68,7 @@ small {
   transition: ease-in 0.5s all;
   transform: translateY(-200%);
   min-width: 320px;
-  z-index: 1;
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -86,6 +87,7 @@ small {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9;
 }
 .toggle__menu {
   margin-bottom: 25px;
@@ -107,9 +109,9 @@ small {
   font-size: 17px;
   text-transform: uppercase;
   border-bottom: 2px solid transparent;
-  transition: linear 0.5s all;
   font-weight: 500;
   padding: 5px 0;
+  font-weight: bolder;
 }
 .toggle__menu li a span {
   text-transform: lowercase;
@@ -117,7 +119,6 @@ small {
 .toggle__menu li a:hover {
   color: #db5523;
   border-bottom: 2px solid #db5523;
-  transition: linear 0.5s all;
   transform: scale(1.15);
   font-weight: 700;
 }
@@ -127,19 +128,32 @@ small {
   margin: 25px auto;
   text-align: center;
   font-size: 0;
+  color: #db5523;
+  border-top: 2px solid #db5523;
 }
-.social li {
+
+.social a {
   display: inline-block;
   width: 25%;
-  text-align: center;
-}
-.social li a {
   text-align: center;
   color: #000;
   font-size: 25px;
   transition: linear 0.5s all;
+  margin-top: 0.5rem;
 }
 .social li a:hover {
   color: #db5523;
   transition: linear 0.5s all;
+}
+
+@media (max-width: 480px) {
+  .navbar-container h1{
+    font-size: 1.8rem;
+  }
+  .navicon{
+    margin: 55px auto 40px;
+  }
+  .navicon--active{
+    margin-top: 6rem;
+  }
 }

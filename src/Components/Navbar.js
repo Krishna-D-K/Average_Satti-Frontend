@@ -15,20 +15,18 @@ export default function Navbar() {
     <div>
       <span className={navicon} onClick={renderNavbar} />
       <div className={toggle}>
-        <div className="navbar-container">
+        <div className="navbar-container gradient-custom text-center text-white">
           <h1>Toggle Menu</h1>
           <ul className="toggle__menu">
             <li onClick={renderNavbar}><Link to="/">Home</Link></li>
             <li onClick={renderNavbar}><Link to="/courses">Courses</Link></li>
             <li onClick={renderNavbar}><Link to="/login">Login</Link></li>
-            <li onClick={renderNavbar}><Link to="/about">About</Link></li>
+            <li onClick={renderNavbar}><Link to="/contributors">Contributors</Link></li>
           </ul>
-          <ul className="social">
-            <li><a href="https://github.com/Kirbaba"><i className="fa fa-github" /></a></li>
-            <li><a href="https://twitter.com/VladKirbaba"><i className="fa fa-twitter" /></a></li>
-            <li> <a href="https://www.facebook.com/VladislavKirbaba"><i className="fa fa-facebook" /></a></li>
-            <li><a href="https://vk.com/vladislavkirbaba"> <i className="fa fa-vk" /></a></li>
-          </ul>
+          <div className="social">
+            <a href="https://github.com/Krishna-D-K/Project-Frontend"><i className="fa-brands fa-github fa-lg"></i></a>
+            <a href="mailto:iwannabeflash@gmail.com"><i className="fa-solid fa-envelope fa-lg"></i></a>
+          </div>
         </div>
       </div>
     </div>
