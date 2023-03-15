@@ -1,0 +1,35 @@
+.contributor-container{
+    margin-top: 5rem;
+}
+.contributor-container>h2{
+    color: #ff8d1e;
+}
+.contributor-message{
+    width: 80%;
+    color: aliceblue;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+@media (max-width: 480px){
+    .contributor-container{
+        margin-top: 4rem;
+    }
+    .contributor-container>h2{
+        font-size: 2rem;
+    }
+    .contributor-message{
+        width: 90%;
+        font-size: 1.1rem;
+    }
+    .col-md-8 form h1{
+        font-size: 2rem;
+    }
+    .col-md-8 form div input{
+        font-size: 1rem;
+    }
+    .col-md-8 form div button{
+        font-size: 1rem;
+    }
+}
