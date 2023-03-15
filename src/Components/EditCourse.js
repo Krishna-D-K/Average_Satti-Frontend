@@ -27,7 +27,7 @@ export default function EditCourse(props) {
         e.preventDefault();
         if(user){
             try {
-                const response = await axios.patch(Apiservice + "/courses/" + data.id, {
+                const response = await axios.patch(Apiservice + "/courses/" + data._id, {
                     semester: semester,
                     courseName: courseName,
                     courseCode: courseCode,
@@ -60,9 +60,9 @@ export default function EditCourse(props) {
                         <label htmlFor="exampleInputEmail1">Course Code</label>
                         <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ex. EE21201" value={courseCode} onChange={e => setCourseCode(e.target.value)} required />
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Semester</label>
-                        <select class="form-control" id="exampleFormControlSelect1" value={semester} onChange={e => setSemester(e.target.value)} required>
+                    <div className="form-group">
+                        <label htmlFor="exampleFormControlSelect1">Semester</label>
+                        <select className="form-control" id="exampleFormControlSelect1" value={semester} onChange={e => setSemester(e.target.value)} required>
                             <option value="">-SELECT-</option>
                             <option value="FIRST">FIRST</option><option value="SECOND">SECOND</option>
                             <option value="THIRD">THIRD</option><option value="FOURTH">FOURTH</option>
@@ -71,9 +71,9 @@ export default function EditCourse(props) {
                             <option value="NINTH">NINTH</option><option value="TENTH">TENTH</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Credits</label>
-                        <select class="form-control" id="exampleFormControlSelect1" value={credits} onChange={e => setCredits(e.target.value)} required>
+                    <div className="form-group">
+                        <label htmlFor="exampleFormControlSelect1">Credits</label>
+                        <select className="form-control" id="exampleFormControlSelect1" value={credits} onChange={e => setCredits(e.target.value)} required>
                             <option value="">-SELECT-</option>
                             <option value="1">1</option><option value="2">2</option>
                             <option value="3">3</option><option value="4">4</option>

@@ -3,84 +3,140 @@
   margin: 1em 0;
   min-width: 300px;
 }
+
 .rwd-table tr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
+
 .rwd-table th {
   display: none;
 }
+
 .rwd-table td {
   display: block;
 }
+
 .rwd-table td:first-child {
   padding-top: 0.5em;
 }
+
 .rwd-table td:last-child {
   padding-bottom: 0.5em;
 }
+
 .rwd-table td:before {
   content: attr(data-th) ": ";
   font-weight: bold;
   width: 6.5em;
   display: inline-block;
 }
-.actions-icon:hover{
+
+.actions-icon:hover {
   cursor: pointer;
 }
-#edit-data-input{
+
+.courses-filter div input{
+  margin: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 0.35rem;
+}
+
+#edit-data-input {
   background-color: transparent;
   margin: 0;
   width: min-content;
   color: aliceblue;
   padding: 0;
 }
+
 @media (min-width: 480px) {
   .rwd-table td:before {
     display: none;
   }
 }
-.rwd-table th, .rwd-table td {
+
+.rwd-table th,
+.rwd-table td {
   text-align: left;
 }
+
 @media (min-width: 480px) {
-  .rwd-table th, .rwd-table td {
+
+  .rwd-table th,
+  .rwd-table td {
     display: table-cell;
     padding: 0.25em 0.5em;
+    text-align: center;
   }
-  .rwd-table th:first-child, .rwd-table td:first-child {
+
+  .rwd-table th:first-child,
+  .rwd-table td:first-child {
     padding-left: 0;
   }
-  .rwd-table th:last-child, .rwd-table td:last-child {
+
+  .rwd-table th:last-child,
+  .rwd-table td:last-child {
     padding-right: 0;
   }
 }
+@media (max-width:480px){
+
+  .rwd-table td:first-child{
+    display: none;
+  }
+  .rwd-table{
+    font-size: 1rem;
+  }
+  #exampleFormControlSelect12{
+    font-size: 0.7rem;
+  }
+  .fa-trash::before{
+    display: flex;
+    align-items: center;
+  }
+  .fa-pen-to-square::before {
+    display: flex;
+    align-items: center;
+  }
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
 h1 {
   font-weight: normal;
   letter-spacing: -1px;
   color: #34495E;
 }
+
 .rwd-table {
   background: #34495E;
   color: #fff;
   border-radius: 0.4em;
   overflow: hidden;
 }
+
 .rwd-table tr {
   border-color: #46637f;
 }
-.rwd-table th, .rwd-table td {
+
+.rwd-table th,
+.rwd-table td {
   margin: 0.5em 1em;
 }
+
 @media (min-width: 480px) {
-  .rwd-table th, .rwd-table td {
+
+  .rwd-table th,
+  .rwd-table td {
     padding: 1em !important;
   }
 }
-.rwd-table th, .rwd-table td:before {
+
+.rwd-table th,
+.rwd-table td:before {
   color: wheat;
 }

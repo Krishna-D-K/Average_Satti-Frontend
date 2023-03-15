@@ -10,17 +10,17 @@ export default function Courses(props) {
     const [editmode, setEditmode] = useState(false);
     const [editdata, setEditdata] = useState(null);
 
-    useEffect(()=>{
-        try{
+    useEffect(() => {
+        try {
             axios.get(Apiservice + "/courses/")
-            .then((response)=>{
-                console.log(response.data);
-                setData(response.data);
-            })
-            .then((responsedata)=>{
+                .then((response) => {
+                    console.log(response.data);
+                    setData(response.data);
+                })
+                .then((responsedata) => {
 
-            })
-        } catch(err){
+                })
+        } catch (err) {
             console.log(err);
         }
     }, [])
@@ -28,15 +28,17 @@ export default function Courses(props) {
     return (
         <>
             <div style={{ "textAlign": "right" }}>
-                <button className='btn btn-outline-success' style={{"margin": "1rem"}} onClick={props.title}>
-                <i className="fa fa-solid fa-plus" /> ADD COURSE
-                </button> 
+                <button className='btn btn-outline-success' style={{ "margin": "1rem" }} onClick={props.title}>
+                    <i className="fa fa-solid fa-plus" /> ADD COURSE
+                </button>
             </div>
-            {data!==null && editmode===false && data.map((value, index)=>{
-                return <Cards data = {value} index = {index} refresh = {()=>{props.refresh()}} edit={()=>{setEditmode(true);setEditdata(value)}}/>
-            })}
-            {data!==null && editmode===true && <EditCourse data = {editdata} refresh = {()=>{props.refresh(); setEditmode(false)}}/>}
-            {data===null && <div style={{'display': "flex", "justifyContent": "center"}}><Loader /></div>}
+            <div className="courses-container">
+                {data !== null && editmode === false && data.map((value, index) => {
+                    return <Cards data={value} index={index} details={props.details} refresh={() => { props.refresh() }} edit={() => { setEditmode(true); setEditdata(value) }} key={index}/>
+                })}
+                {data !== null && editmode === true && <EditCourse data={editdata} refresh={() => { props.refresh(); setEditmode(false) }} />}
+                {data === null && <div style={{ 'display': "flex", "justifyContent": "center" }}><Loader /></div>}
+            </div>
         </>
     )
 }

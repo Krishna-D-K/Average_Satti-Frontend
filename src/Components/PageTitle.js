@@ -5,8 +5,8 @@ function PageTitle() {
     return (
         <>
             <div id="page-title-container">
-                <div class="sign">
-                    E<span class="fast-flicker">l</span>ectr<span class="flicker">i</span>cal Engineer<span class="flicker">i</span>ng
+                <div className="sign">
+                    E<span className="fast-flicker">l</span>ectr<span className="flicker">i</span>cal Engineer<span className="flicker">i</span>ng
                 </div>
             </div>
         </>

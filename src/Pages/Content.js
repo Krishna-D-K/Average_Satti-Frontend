@@ -44,29 +44,32 @@ export default function Content() {
                 <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
                 <div className="content-details">
                     {details !== null && (<>
-                        <span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Course Code : </span><span style={{ "color": "wheat" }}>{details.courseCode} &emsp;</span>
-                        <span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Course Name : </span><span style={{ "color": "wheat" }}>{details.courseName} &emsp;</span>
-                        <span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Semester : </span><span style={{ "color": "wheat" }}>{details.semester} &emsp;</span>
-                        <span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Credits : </span><span style={{ "color": "wheat" }}>{details.credits} &emsp;</span>
+                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Course Code : </span><span style={{ "color": "wheat" }}>{details.courseCode} &emsp;</span></p>
+                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Course Name : </span><span style={{ "color": "wheat" }}>{details.courseName} &emsp;</span></p>
+                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Semester : </span><span style={{ "color": "wheat" }}>{details.semester} &emsp;</span></p>
+                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Credits : </span><span style={{ "color": "wheat" }}>{details.credits} &emsp;</span></p>
                     </>
                     )}
                 </div>
                 <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
                 {data !== null && <><div className="content-data">
-                    <button class="accordion" id="Assingment" onClick={() => accordian("Assingment")}>Assignments</button>
-                    <div class="panel">
-                        <ul class="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                    <button className="accordion" id="Assingment" onClick={() => accordian("Assingment")}>Assignments</button>
+                    <div className="panel">
+                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
                             {data !== null && data.filter(element => element.type === "Assignment").map((element, index) => {
                                 return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }}>
+                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
                                         <p style={{ "float": "left", "color": "#6fb7ff" }}>
                                             {element.description}
                                         </p>
                                         <div className="accordion-icons" style={{ "float": "right" }}>
                                             <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i class="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
                                             <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??"></i>
+                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                            </a>
+
                                         </div>
                                     </li>
                                 )
@@ -74,20 +77,22 @@ export default function Content() {
                         </ul>
                         {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                     </div>
-                    <button class="accordion" id="Test" onClick={() => accordian("Test")}>Tests</button>
-                    <div class="panel">
-                        <ul class="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                    <button className="accordion" id="Test" onClick={() => accordian("Test")}>Tests</button>
+                    <div className="panel">
+                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
                             {data !== null && data.filter(element => element.type === "Test").map((element, index) => {
                                 return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }}>
+                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
                                         <p style={{ "float": "left", "color": "#6fb7ff" }}>
                                             {element.description}
                                         </p>
                                         <div className="accordion-icons" style={{ "float": "right" }}>
                                             <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i class="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
                                             <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??"></i>
+                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                            </a>
                                         </div>
                                     </li>
                                 )
@@ -95,20 +100,22 @@ export default function Content() {
                         </ul>
                         {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                     </div>
-                    <button class="accordion" id="Reference Material" onClick={() => accordian("Reference Material")}>Reference Material</button>
-                    <div class="panel">
-                        <ul class="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                    <button className="accordion" id="Reference Material" onClick={() => accordian("Reference Material")}>Reference Material</button>
+                    <div className="panel">
+                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
                             {data !== null && data.filter(element => element.type === "Reference Material").map((element, index) => {
                                 return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }}>
+                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
                                         <p style={{ "float": "left", "color": "#6fb7ff" }}>
                                             {element.description}
                                         </p>
                                         <div className="accordion-icons" style={{ "float": "right" }}>
                                             <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i class="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
                                             <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??"></i>
+                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                            </a>
                                         </div>
                                     </li>
                                 )
@@ -116,20 +123,22 @@ export default function Content() {
                         </ul>
                         {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                     </div>
-                    <button class="accordion" id="Question Paper" onClick={() => accordian("Question Paper")}>Question Papers</button>
-                    <div class="panel">
-                        <ul class="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                    <button className="accordion" id="Question Paper" onClick={() => accordian("Question Paper")}>Question Papers</button>
+                    <div className="panel">
+                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
                             {data !== null && data.filter(element => element.type === "Question Paper").map((element, index) => {
                                 return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }}>
+                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
                                         <p style={{ "float": "left", "color": "#6fb7ff" }}>
                                             {element.description}
                                         </p>
                                         <div className="accordion-icons" style={{ "float": "right" }}>
                                             <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i class="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
                                             <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??"></i>
+                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                            </a>
                                         </div>
                                     </li>
                                 )
@@ -137,20 +146,22 @@ export default function Content() {
                         </ul>
                         {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                     </div>
-                    <button class="accordion" id="Notes" onClick={() => accordian("Notes")}>Notes</button>
-                    <div class="panel">
-                        <ul class="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                    <button className="accordion" id="Notes" onClick={() => accordian("Notes")}>Notes</button>
+                    <div className="panel">
+                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
                             {data !== null && data.filter(element => element.type === "Notes").map((element, index) => {
                                 return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }}>
+                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
                                         <p style={{ "float": "left", "color": "#6fb7ff" }}>
                                             {element.description}
                                         </p>
                                         <div className="accordion-icons" style={{ "float": "right" }}>
                                             <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i class="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
                                             <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??"></i>
+                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                            </a>
                                         </div>
                                     </li>
                                 )
@@ -158,19 +169,21 @@ export default function Content() {
                         </ul>
                         {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                     </div>
-                    <button class="accordion" id="Playlist" onClick={() => accordian("Playlist")}>Playlist</button>
-                    <div class="panel">
-                        <ul class="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                    <button className="accordion" id="Playlist" onClick={() => accordian("Playlist")}>Playlist</button>
+                    <div className="panel">
+                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
                             {data !== null && data.filter(element => element.type === "Playlist").map((element, index) => {
                                 return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }}>
+                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
                                         <p style={{ "float": "left", "color": "#6fb7ff" }}>
                                             {element.description}
                                         </p>
                                         <div className="accordion-icons" style={{ "float": "right" }}>
                                             <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
                                             <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??"></i>
+                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                            </a>
                                         </div>
                                     </li>
                                 )

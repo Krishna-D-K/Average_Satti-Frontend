@@ -8,3 +8,19 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
+.admin-profile-edit:hover{
+    cursor: pointer;
+    font-style: italic;
+}
+
+.img-fluid-my-5{
+    /* style={{ width: '22vh' }}  */
+    width: 22vh;
+    margin: 1rem 0;
+}
+
+@media (max-width: 480px) {
+    .img-fluid-my-5{
+        margin: 0;
+    }
+}

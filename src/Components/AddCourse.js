@@ -1,11 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import Apiservice from "../Apiservice";
-import {useAuthContext} from "../hooks/useAuthContext"
 
 export default function AddCourse(props) {
 
-    const {user} = useAuthContext();
+    const user = JSON.parse(localStorage.getItem("user"));
     const [courseName, setCourseName] = useState(null);
     const [courseCode, setCourseCode] = useState(null);
     const [semester, setSemester] = useState(null);

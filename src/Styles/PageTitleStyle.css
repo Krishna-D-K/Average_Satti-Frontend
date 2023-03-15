@@ -35,10 +35,10 @@
     text-transform: uppercase;
     font-size: 4rem;
     color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    /* text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
         -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-    animation: shine 2s forwards, flicker 3s infinite;
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483; */
+    /* animation: shine 2s forwards, flicker 3s infinite; */
 }
 
 @keyframes blink {
@@ -226,9 +226,6 @@
   
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
-    body {
-        background-color: yellow;
-    }
     .sign{
         font-size: 2.5rem;
     }
@@ -236,24 +233,21 @@
   
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px){
-    body {
-        background-color: blue;
-    }
     .sign{
         font-size: 3rem;
     }
 }
   
 /* Media Query for Laptops and Desktops */
-@media (min-width: 1025px) and (max-width: 1280px){
+/* @media (min-width: 1025px) and (max-width: 1280px){
     body {
         background-color: green;
     }
-}
-  
+} */
+
 /* Media Query for Large screens */
-@media (min-width: 1281px) {
+/* @media (min-width: 1281px) {
     body {
-        /* background-color: white; */
+        background-color: white;
     }
-}
+} */

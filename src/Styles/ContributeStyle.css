@@ -1,6 +1,28 @@
 .contribute-container{
     margin-top: 5rem;
 }
+.contribute-container div{
+    color: rgba(253, 160, 133, 1);
+}
+.contribute-container-form{
+    width: 60%;
+    margin: 0 auto;
+    color:rgba(253, 160, 133, 1)
+}
+.contribute-container-form input{
+    margin: 0 0.5rem;
+}
+.contribute-form-group select{
+    margin: 0 0.5rem;
+    width: 80%;
+}
+.contribute-form-group{
+    width: 60%;
+    margin: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 .contribute-container>h2{
     color: #ff8d1e;
 }
@@ -13,4 +35,63 @@
 }
 .adduser-container{
     margin-top: 1.5rem
+}
+.adduser-container-div{
+    width: 60%;
+    margin: 0 auto;
+    color:rgba(253, 160, 133, 1)
+}
+.adduser-container-div form div div{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.contribute-form-group input{
+    color: #000000;
+    width: 60%;
+}
+.contribute-form-group select{
+    color: #000000;
+    width: 60%;
+}
+
+@media (max-width: 480px) {
+    .adduser-container-div{
+        width: 80%;
+    }
+    .adduser-container-div form div{
+        display: flex ;
+        flex-direction: column;
+    }
+    .adduser-container-div form div div{
+        width: 120%;
+    }
+    .contribute-form-group{
+        display: flex;
+        flex-direction: row;
+    }
+    .contribute-form-group select{
+        width: 80%;
+    }
+    .contribute-form-group input{
+        width: 80%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .contribute-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .contribute-container div{
+        width: 90%;
+    }
+    .contribute-container form div{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
 }

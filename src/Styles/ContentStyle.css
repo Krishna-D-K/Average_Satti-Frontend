@@ -6,6 +6,9 @@
 }
 .content-details{
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-size: 1.2rem;
 }
 .content-contribute{
@@ -71,4 +74,16 @@
   .accordion-icons>i:hover{
     color: aqua;
     cursor: pointer;;
+  }
+
+  @media (max-width: 480px) {
+    .content-details{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      font-size: 0.8rem;
+    }
+    .list-group-item p{
+      font-size: 1rem;
+    }
   }

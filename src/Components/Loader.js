@@ -17,7 +17,7 @@ function Loader() {
                         <rect className="rect" id="rect7" x={0} y={0} width={30} height={30} rx={2} ry={2} fill="gold" />
                     </g>
                 </svg>
-                <span style={{"color": "whitesmoke", "marginTop": "1rem"}}>Loading....</span>
+                <span style={{"color": "whitesmoke", "marginTop": "1rem"}}>Hang on there...!!</span>
             </div>
         </>
     )

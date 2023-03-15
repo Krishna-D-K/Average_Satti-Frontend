@@ -5,8 +5,8 @@ export default function Login() {
 
     const [type, setType] = useState("password");
     const [classname, setClassname] = useState("fa-solid fa-eye-slash");
-    const [rollNo, setRollNo] = useState(null);
-    const [password, setPassword] = useState(null);
+    const [rollNo, setRollNo] = useState("");
+    const [password, setPassword] = useState("");
     const {signup, error} = useSignup();
     
     const loginUser = async (e) => {
@@ -34,8 +34,8 @@ export default function Login() {
                                 {/* Password input */}
                                 <div className="form-outline mb-3" style={{"display": "flex", "backgroundColor": "white", "borderRadius": "0.25rem"}}>
                                     <input type={type}  value={password} onChange={(e)=>setPassword(e.target.value)} id="form3Example4" className="form-control form-control-lg" placeholder="Enter password" style={{"border":"none", "borderRadius": "0.25rem 0 0 0.25rem"}} required/>
-                                    <label for="form3Example4" 
-                                    style={{"width": "10%", "fontSize": "1.25rem", "border":"none", "padding": "0.5rem 1rem", "marginBottom": "0", "borderRadius": "0", "cursor":"pointer"}}
+                                    <label htmlFor="form3Example4" 
+                                    style={{"width": "10%", "display": "flex", "justifyContent": "center", "alignItems": "center", "fontSize": "1.25rem", "border":"none", "padding": "0.5rem 1rem", "marginBottom": "0", "borderRadius": "0", "cursor":"pointer"}}
                                     onClick={()=>{
                                         if(type==="password"){
                                             setType("text");
@@ -46,7 +46,7 @@ export default function Login() {
                                             setClassname("fa-solid fa-eye-slash");
                                         }
                                     }}
-                                    ><i class={classname}></i></label>
+                                    ><i className={classname}></i></label>
                                 </div>
                                 {error && <div className="login-err" style={{"color": "red"}}>{error}</div>}
                                 <div className="text-center text-lg-start mt-4 pt-2">

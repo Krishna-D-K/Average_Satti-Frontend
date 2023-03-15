@@ -1,11 +1,81 @@
-.course-container{
+.course-container {
     margin-top: 5rem;
 }
-.course-container>h1{
+
+.course-container>h1 {
     color: #ff8d1e;
 }
-.course-grid{
+
+.course-grid {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.courses-filter div h5{
+    display: inline;
+    color: #ff8d1e;
+}
+
+#courses-filter-input{
+    margin: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 0.35rem;
+}
+
+#exampleFormControlSelect11{
+    margin: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 0.35rem;
+}
+#exampleFormControlSelect12{
+    margin: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 0.35rem;
+}
+
+@media (max-width: 480px) {
+    .course-container{
+        margin-top: 4rem;
+    }
+    .course-container h1{
+        font-size: 2rem;
+    }
+    .course-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .courses-filter div{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .courses-filter div h5{
+        font-size: 1rem;
+        display: block;
+        color: #ff8d1e;
+    }
+    #exampleFormControlSelect1{
+        margin: 0.2rem 1rem;
+        font-size: 0.8rem;
+    }
+    #courses-filter-input{
+        margin: 0.5rem auto;
+        font-size: 0.9rem;
+    }
+    .courses-filter div input{
+        font-size: 0.8rem;
+        margin: 0.2rem;
+        width: 40%;
+    }
+    #exampleFormControlSelect11{
+        font-size: 0.7rem;
+    }
+    #exampleFormControlSelect12{
+        font-size: 0.7rem;
+    }
 }
