@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +67,51 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+
+<h1 align= "center">Average_Satti</h1>
+<div align = "center">
+
+![GitHub language count](https://img.shields.io/github/languages/count/Krishna-D-K/Project-Frontend?color=gre&style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/Krishna-D-K/Project-Frontend?color=mint&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Krishna-D-K/Project-Frontend?color=mint&style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Krishna-D-K/Project-Frontend?color=mint&style=for-the-badge)
+</div>
+
+> ## Description
+&emsp;&emsp;This project began at 21-12-2022, while beta-testing was from 16-03-2022 till .Intended to design a complete collection of useful resources mainly for the Electrical Engineering students, any person can be benefited from it. This is a collaborative platform where any user can upload the study material, while the admins can either delete it or modify it as per need.<br />
+The backend is deployed on [cyclic.sh](https://www.cyclic.sh/) at [
+https://average-satti-backend.cyclic.app](
+https://average-satti-backend.cyclic.app), while [Drive API](https://developers.google.com/drive/api/guides/about-sdk) is used for the files to be uploaded and deleted. JSON Web Token ([JWT](https://jwt.io/)) are used for the authentication purposes.
+> ## Getting started
+ 1. Firstly clone the repository into your local machine.
+ ```bash
+git clone https://github.com/Krishna-D-K/Project-Frontend
+```
+ 2. cd to cloned folder and install the dependencies using [npm](https://www.npmjs.com) .
+```bash
+cd frontend
+npm install
+```
+3. Run the frontend in the cloned folder using the command.
+```bash
+npm run start
+```
+4. If you have access to the backend repository used for this project, and wish to run the server on your localhost, change the [Apiservice](https://github.com/Krishna-D-K/Project-Frontend/blob/main/src/Apiservice.js) file to your local port number of server. For example: 
+```
+const Apiservice = "http://localhost:<PORT_NUMBER>";
+export default Apiservice;
+``` 
+5. If you wish to access the backend repository of the project, drop an email at [iwannabeflash@gmail.com]() specifying the purpose.
+
+> ## Tech Stack
+<div align="center">
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Google Drive](https://img.shields.io/badge/Drive%20API-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
+</div>
+
+&emsp;(*The **passwords.env** file is left intentionally in the repository, you may add it in .gitignore.*)
