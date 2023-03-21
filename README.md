@@ -113,5 +113,3 @@ export default Apiservice;
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 ![Google Drive](https://img.shields.io/badge/Drive%20API-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
 </div>
-
-&emsp;(*The **passwords.env** file is left intentionally in the repository, you may add it in .gitignore.*)
