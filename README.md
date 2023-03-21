@@ -72,10 +72,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <h1 align= "center">Average_Satti</h1>
 <div align = "center">
 
-![GitHub language count](https://img.shields.io/github/languages/count/Krishna-D-K/Project-Frontend?color=gre&style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/Krishna-D-K/Project-Frontend?color=mint&style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/Krishna-D-K/Project-Frontend?color=mint&style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/Krishna-D-K/Project-Frontend?color=mint&style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Krishna-D-K/Average_Satti-Frontend?color=gre&style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/Krishna-D-K/Average_Satti-Frontend?color=mint&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Krishna-D-K/Average_Satti-Frontend?color=mint&style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Krishna-D-K/Average_Satti-Frontend?color=mint&style=for-the-badge)
 </div>
 
 > ## Description
