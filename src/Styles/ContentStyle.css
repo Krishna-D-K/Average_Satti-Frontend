@@ -1,89 +1,121 @@
-.content-container{
-    margin-top: 5rem;
+.content-container {
+  width: 90%;
+  margin: 1rem auto;
 }
-.content-container>h2{
-    color: #ff8d1e;
+
+.content-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.content-details{
-    text-align: center;
+
+.content-heading h2 {
+  font-family: 'Laila', sans-serif;
+  color: cornflowerblue;
+  font-size: 1.4rem;
+  font-style: italic;
+  letter-spacing: 0.05rem;
+}
+
+.content-heading hr {
+  height: 0.1rem;
+  width: 80%;
+  background-color: gray;
+  border-radius: 0.1rem;
+  margin: auto;
+}
+
+.content-details {
+  margin: 0.4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1rem;
+}
+.content-details hr {
+  height: 0.1rem;
+  width: 100%;
+  background-color: gray;
+  border-radius: 0.1rem;
+  margin: auto;
+}
+.content-details p span{
+  font-family: 'Laila', sans-serif;
+}
+
+.content-contribute {
+  color: aliceblue;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.content-data {
+  width: 90%;
+  margin: 2rem auto;
+  background-color: black;
+}
+
+.panel {
+  background-color: #8080808a;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding: 0 0.2rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.accordion{
+  --bs-accordion-bg: #34495E;
+  --bs-accordion-border-color: gray;
+  --bs-accordion-border-radius: 0.2rem;
+  --bs-accordion-btn-focus-border: none;
+  --bs-accordion-active-bg: #34495E;
+  --bs-accordion-active-color: wheat;
+  --bs-accordion-btn-color: wheat;
+  --bs-accordion-btn-focus-border-color: transparent;
+  --bs-accordion-btn-icon-filter: filter(grayscale:100%);
+  border-radius: 1rem;
+}
+.accordion-heading{
+  font-family: 'Laila', sans-serif;
+  /* color: wheat; */
+}
+.list-group-item{
+  background-color: #34495E;
+}
+.list-group-item p{
+  font-family: 'Laila', sans-serif;
+  float: left;
+  color: wheat;
+}
+.accordion-icons>i , .accordion-icons>a {
+  color: wheat;
+  font-size: 1rem;
+}
+.accordion-icons>a:hover {
+  color: aquamarine;
+  cursor: pointer;
+  
+}
+
+.accordion-icons>i:hover {
+  color: aqua;
+  cursor: pointer;
+  ;
+}
+
+@media (max-width: 480px) {
+  .content-details {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    font-size: 1.2rem;
-}
-.content-contribute{
-    color: aliceblue;
-    margin: 0 auto;
-    width: 90%;
-}
-.content-data{
-    width: 90%;
-    margin: 2rem auto ;
-}
-.accordion {
-    background-color: #8080805e;
-    color: wheat;
-    cursor: pointer;
-    padding: 1rem;
-    width: 100%;
-    border: none;
-    border-radius: 0.5rem;
-    margin: 0.2rem 0;
-    text-align: left;
-    outline: none;
-    font-size: 1.2rem;
-    transition: 0.4s;
-  }
-  
-  .accordion-active, .accordion:hover {
-    background-color: #8080808a;
-  }
-  
-  .accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .accordion-active:after {
-    content: "\2212";
-  }
-  
-  .panel {
-    background-color: #8080808a;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    padding: 0 0.2rem;
-    width: 100%;
-    border: none;
-    border-radius: 0.5rem;
-  }
-  .accordion-icons>i{
-    color: wheat;
-  }
-  .accordion-icons>a{
-    color: wheat;
-  }
-  .accordion-icons>a:hover{
-    color: aqua;
-    cursor: pointer;;
-  }
-  .accordion-icons>i:hover{
-    color: aqua;
-    cursor: pointer;;
+    justify-content: flex-start;
+    font-size: 0.8rem;
   }
 
-  @media (max-width: 480px) {
-    .content-details{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      font-size: 0.8rem;
-    }
-    .list-group-item p{
-      font-size: 1rem;
-    }
+  .list-group-item p {
+    font-size: 1rem;
   }
+}

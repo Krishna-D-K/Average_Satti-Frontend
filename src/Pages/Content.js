@@ -3,23 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Apiservice from '../Apiservice';
 import Loader from '../Components/Loader';
+import Accordion from 'react-bootstrap/Accordion';
 import "../Styles/ContentStyle.css";
 
 export default function Content() {
     const { code } = useParams();
     const [details, setDetails] = useState(null);
     const [data, setData] = useState(null);
-
-    function accordian(name) {
-        var acc = document.getElementById(name);
-        acc.classList.toggle("accordion-active");
-        var panel = acc.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    }
 
     const getData = async () => {
         try {
@@ -40,161 +30,180 @@ export default function Content() {
     return (
         <>
             <div className="content-container">
-                <h2 style={{ "textAlign": "center" }}>COURSE CONTENT</h2>
-                <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
+                <div className="content-heading">
+                    <h2>Course Content</h2>
+                    <hr />
+                </div>
                 <div className="content-details">
                     {details !== null && (<>
-                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Course Code : </span><span style={{ "color": "wheat" }}>{details.courseCode} &emsp;</span></p>
-                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Course Name : </span><span style={{ "color": "wheat" }}>{details.courseName} &emsp;</span></p>
-                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Semester : </span><span style={{ "color": "wheat" }}>{details.semester} &emsp;</span></p>
-                        <p><span style={{ "color": "#ff8d1e", "fontWeight": "" }}>Credits : </span><span style={{ "color": "wheat" }}>{details.credits} &emsp;</span></p>
+                        <p><span style={{ "color": "cornflowerblue", "font-style": "italic" }}>Course Code : </span><span style={{ "color": "aliceblue" }}>{details.courseCode} &emsp;</span></p>
+                        <p><span style={{ "color": "cornflowerblue", "font-style": "italic" }}>Course Name : </span><span style={{ "color": "aliceblue" }}>{details.courseName} &emsp;</span></p>
+                        <p><span style={{ "color": "cornflowerblue", "font-style": "italic" }}>Semester : </span><span style={{ "color": "aliceblue" }}>{details.semester} &emsp;</span></p>
+                        <p><span style={{ "color": "cornflowerblue", "font-style": "italic" }}>Credits : </span><span style={{ "color": "aliceblue" }}>{details.credits} &emsp;</span></p>
                     </>
                     )}
+                    <hr />
                 </div>
-                <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
-                {data !== null && <><div className="content-data">
-                    <button className="accordion" id="Assingment" onClick={() => accordian("Assingment")}>Assignments</button>
-                    <div className="panel">
-                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
-                            {data !== null && data.filter(element => element.type === "Assignment").map((element, index) => {
-                                return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
-                                        <p style={{ "float": "left", "color": "#6fb7ff" }}>
-                                            {element.description}
-                                        </p>
-                                        <div className="accordion-icons" style={{ "float": "right" }}>
-                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
-                                            </a>
+                {data !== null &&
+                    <>
+                        <div className="content-data">
+                            <Accordion flush id="accordion">
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header><span className='accordion-heading'>Assignments</span></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                                            {data !== null && data.filter(element => element.type === "Assignment").map((element, index) => {
+                                                return (
+                                                    <li className="list-group-item" key={index}>
+                                                        <p>
+                                                            {element.description}
+                                                        </p>
+                                                        <div className="accordion-icons" style={{ "float": "right" }}>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                            </a>
 
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                        {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
-                    </div>
-                    <button className="accordion" id="Test" onClick={() => accordian("Test")}>Tests</button>
-                    <div className="panel">
-                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
-                            {data !== null && data.filter(element => element.type === "Test").map((element, index) => {
-                                return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
-                                        <p style={{ "float": "left", "color": "#6fb7ff" }}>
-                                            {element.description}
-                                        </p>
-                                        <div className="accordion-icons" style={{ "float": "right" }}>
-                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
-                                            </a>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                        {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
-                    </div>
-                    <button className="accordion" id="Reference Material" onClick={() => accordian("Reference Material")}>Reference Material</button>
-                    <div className="panel">
-                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
-                            {data !== null && data.filter(element => element.type === "Reference Material").map((element, index) => {
-                                return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
-                                        <p style={{ "float": "left", "color": "#6fb7ff" }}>
-                                            {element.description}
-                                        </p>
-                                        <div className="accordion-icons" style={{ "float": "right" }}>
-                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
-                                            </a>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                        {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
-                    </div>
-                    <button className="accordion" id="Question Paper" onClick={() => accordian("Question Paper")}>Question Papers</button>
-                    <div className="panel">
-                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
-                            {data !== null && data.filter(element => element.type === "Question Paper").map((element, index) => {
-                                return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
-                                        <p style={{ "float": "left", "color": "#6fb7ff" }}>
-                                            {element.description}
-                                        </p>
-                                        <div className="accordion-icons" style={{ "float": "right" }}>
-                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
-                                            </a>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                        {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
-                    </div>
-                    <button className="accordion" id="Notes" onClick={() => accordian("Notes")}>Notes</button>
-                    <div className="panel">
-                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
-                            {data !== null && data.filter(element => element.type === "Notes").map((element, index) => {
-                                return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
-                                        <p style={{ "float": "left", "color": "#6fb7ff" }}>
-                                            {element.description}
-                                        </p>
-                                        <div className="accordion-icons" style={{ "float": "right" }}>
-                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
-                                            </a>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                        {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
-                    </div>
-                    <button className="accordion" id="Playlist" onClick={() => accordian("Playlist")}>Playlist</button>
-                    <div className="panel">
-                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
-                            {data !== null && data.filter(element => element.type === "Playlist").map((element, index) => {
-                                return (
-                                    <li className="list-group-item" style={{ "padding": "0.5rem 1rem 0 1rem", "fontSize": "1.3rem", "backgroundColor": "#454545" }} key={index}>
-                                        <p style={{ "float": "left", "color": "#6fb7ff" }}>
-                                            {element.description}
-                                        </p>
-                                        <div className="accordion-icons" style={{ "float": "right" }}>
-                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
-                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
-                                            </a>
-                                        </div>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                        {details !== null && <div style={{ "padding": "0.9rem 1rem" }}> <br /><br /><span style={{ "color": "wheat" }}>That's All!!</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
-                    </div>
-                </div>
-                    <div className="content-contribute">
-                        Didn't find what you are looking ? {details !== null && <Link to={`/contribute/${details.courseCode}`}>Contribute</Link>}
-                    </div></>}
+                                                        </div>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="1">
+                                    <Accordion.Header><span className='accordion-heading'>Tests</span></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                                            {data !== null && data.filter(element => element.type === "Test").map((element, index) => {
+                                                return (
+                                                    <li className="list-group-item" key={index}>
+                                                        <p>
+                                                            {element.description}
+                                                        </p>
+                                                        <div className="accordion-icons" style={{ "float": "right" }}>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="2">
+                                    <Accordion.Header><span className='accordion-heading'>Reference Material</span></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                                            {data !== null && data.filter(element => element.type === "Reference Material").map((element, index) => {
+                                                return (
+                                                    <li className="list-group-item" key={index}>
+                                                        <p>
+                                                            {element.description}
+                                                        </p>
+                                                        <div className="accordion-icons" style={{ "float": "right" }}>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="3">
+                                    <Accordion.Header><span className='accordion-heading'>Question Papers</span></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                                            {data !== null && data.filter(element => element.type === "Question Paper").map((element, index) => {
+                                                return (
+                                                    <li className="list-group-item" key={index}>
+                                                        <p>
+                                                            {element.description}
+                                                        </p>
+                                                        <div className="accordion-icons" style={{ "float": "right" }}>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="4">
+                                    <Accordion.Header><span className='accordion-heading'>Notes</span></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                                            {data !== null && data.filter(element => element.type === "Notes").map((element, index) => {
+                                                return (
+                                                    <li className="list-group-item" key={index}>
+                                                        <p>
+                                                            {element.description}
+                                                        </p>
+                                                        <div className="accordion-icons" style={{ "float": "right" }}>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="5">
+                                    <Accordion.Header><span className='accordion-heading'>Playlist</span></Accordion.Header>
+                                    <Accordion.Body>
+                                        <ul className="list-group list-group-flush" style={{ "backgroundColor": "#8080805e" }}>
+                                            {data !== null && data.filter(element => element.type === "Playlist").map((element, index) => {
+                                                return (
+                                                    <li className="list-group-item" key={index}>
+                                                        <p>
+                                                            {element.description}
+                                                        </p>
+                                                        <div className="accordion-icons" style={{ "float": "right" }}>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
+                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
+                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                        </div>
+                        <div className="content-contribute">
+                            Didn't find what you are looking ? {details !== null && <Link to={`/contribute/${details.courseCode}`}>Contribute</Link>}
+                        </div>
+                    </>}
                 {data === null && <div style={{ "display": "flex", "justifyContent": "center" }}><Loader /></div>}
             </div>
         </>

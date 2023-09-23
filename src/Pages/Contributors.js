@@ -25,13 +25,15 @@ export default function Contributors() {
   return (
     <>
       <div className="contributor-container">
-        <h2 style={{ "textAlign": "center" }}>CONTRIBUTORS</h2>
-        <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
+        <div className="contributorHeading">
+          <h1>Contributors</h1>
+          <hr/>
+        </div>
         <div className="contributor-message">
           A special thanks to all the contributors who had contributed content to this site. <br />
           Without y'all, it wouldn't have been as good as it is now. <span style={{ "color": "red" }}>&#10084;</span>
         </div>
-        <div style={{ "display": "flex", "justifyContent": "center", "fontSize": "1.2rem" }}>
+        <div style={{ "display": "flex", "justifyContent": "center","margin":"0 auto", "fontSize": "1.2rem", "width": "80%" }}>
           {data !== null && <table className="rwd-table">
             <thead>
               <tr>

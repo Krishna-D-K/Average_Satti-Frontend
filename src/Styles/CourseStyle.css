@@ -1,9 +1,26 @@
 .course-container {
-    margin-top: 5rem;
+    width: 90%;
+    margin: 1rem auto;
 }
-
-.course-container>h1 {
-    color: #ff8d1e;
+.courseHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.courseHeading hr{
+    height: 0.1rem;
+    width: 90%;
+    background-color: gray;
+    border-radius: 0.1rem;
+    margin: auto;
+}
+.courseHeading h1 {
+    font-family: 'Laila', sans-serif;
+    color: cornflowerblue;
+    font-size: 1.4rem;
+    font-style: italic;
+    letter-spacing: 0.05rem;
 }
 
 .course-grid {
@@ -11,30 +28,52 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
-
+.courses-filter div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 .courses-filter div h5{
+    font-size: 1rem;
     display: inline;
-    color: #ff8d1e;
+    color: cornflowerblue;
 }
-
 #courses-filter-input{
     margin: 0.5rem;
-    padding: 0.3rem;
-    border-radius: 0.35rem;
+    padding: 0 0.2rem !important;
+    font-size: 1rem;
+    font-family: 'Laila', sans-serif;
+    border: none;
+    border-radius: 0.2rem;
 }
-
-#exampleFormControlSelect11{
+.courses-filter select{
     margin: 0.5rem;
-    padding: 0.3rem;
-    border-radius: 0.35rem;
+    font-size: 1rem;
+    padding: 0 0.2rem !important;
+    border: none;
+    border-radius: 0.2rem !important;
+    font-family: 'Laila', sans-serif;
+    color: rgb(55, 55, 55);
 }
-#exampleFormControlSelect12{
-    margin: 0.5rem;
-    padding: 0.3rem;
-    border-radius: 0.35rem;
+.course-link a{
+    text-decoration: none;
+    color: cornflowerblue;
+    text-decoration: underline;
 }
-
+.rwd-table{
+    width: 90%;
+}
+.rwd-table tr th, .rwd-table tr td{
+    font-family: 'Laila', sans-serif;
+    font-size: 0.9rem;
+    text-align: left;
+}
+.rwd-table tr th{
+    font-weight: normal;
+    font-size: 1rem;
+}
 @media (max-width: 480px) {
     .course-container{
         margin-top: 4rem;

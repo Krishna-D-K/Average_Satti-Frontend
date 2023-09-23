@@ -82,8 +82,10 @@ export default function Contribute() {
   return (
     <>
       <div className="contribute-container">
-        <h2 style={{ "textAlign": "center" }}>CONTRIBUTE</h2>
-        <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
+        <div className="contributeHeading">
+          <h1>Contribute</h1>
+          <hr/>
+        </div>
         <div className='contribute-container-form'>
           {details !== null && <form onSubmit={handleSubmit}>
             <div style={{ "display": "flex", "alignItems": "center" }}>

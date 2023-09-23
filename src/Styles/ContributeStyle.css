@@ -1,13 +1,33 @@
 .contribute-container{
-    margin-top: 5rem;
+    width: 90%;
+    margin: 2rem auto;
 }
-.contribute-container div{
-    color: rgba(253, 160, 133, 1);
+.contributeHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.contributeHeading hr{
+    height: 0.1rem;
+    width: 90%;
+    background-color: gray;
+    border-radius: 0.1rem;
+    margin: auto;
+}
+.contributeHeading h1 {
+    font-family: 'Laila', sans-serif;
+    color: cornflowerblue;
+    font-size: 1.4rem;
+    font-style: italic;
+    letter-spacing: 0.05rem;
 }
 .contribute-container-form{
     width: 60%;
-    margin: 0 auto;
-    color:rgba(253, 160, 133, 1)
+    margin: 2rem auto;
+    color:rgba(253, 160, 133, 1);
+    font-family : 'Laila', sans-serif;
+    font-size: 0.9rem;
 }
 .contribute-container-form input{
     margin: 0 0.5rem;

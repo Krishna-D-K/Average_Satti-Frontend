@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import Navbar from './Components/Navbar';
+import NavBar from './Components/Navbar';
 import { useAuthContext } from './hooks/useAuthContext';
 import Admin from './Pages/Admin';
 import Content from './Pages/Content';
@@ -14,7 +14,7 @@ function App() {
   const { user } = useAuthContext();
   return (
     <BrowserRouter>
-      <Navbar />
+      <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={!user ? <Login /> : <Navigate to="/admin" />} />
