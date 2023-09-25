@@ -44,7 +44,7 @@ export default function AddUser() {
                         instiMail: instiMail,
                         createdBy: user.rollNo // check this piece of code here
                     }).then((res) => {
-                        console.log(res);
+                        // console.log(res);
                         setError(null);
                         setDisplay("block");
                         resetData();
@@ -60,7 +60,7 @@ export default function AddUser() {
                         instiMail: instiMail,
                         createdBy: user.rollNo // check this piece of code here
                     }).then((res) => {
-                        console.log(res);
+                        // console.log(res);
                         setError(null);
                         setDisplay("block");
                         resetData();

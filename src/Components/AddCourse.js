@@ -38,7 +38,7 @@ export default function AddCourse(props) {
                         "Authorization": `Bearer ${user.token}`
                     }
                 })
-                console.log(response);
+                // console.log(response);
             } catch (err) {
                 console.log(err);
             }

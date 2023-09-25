@@ -11,7 +11,7 @@ export default function Cards(props) {
     let adminDisplay = "inline";
     const deleteCourse = async (id) => {
         if (user) {
-            console.log(id);
+            // console.log(id);
             try {
                 const response = await axios.delete(Apiservice + "/courses/" + id, {
                     headers: {
@@ -20,7 +20,7 @@ export default function Cards(props) {
                 });
                 setConfirmbox(false);
                 props.refresh();
-                console.log(response);
+                // console.log(response);
             } catch (err) {
                 console.log(err);
             }

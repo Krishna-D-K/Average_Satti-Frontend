@@ -14,7 +14,7 @@ export default function Courses(props) {
         try {
             axios.get(Apiservice + "/courses/")
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     setData(response.data);
                 })
                 .then((responsedata) => {

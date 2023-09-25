@@ -19,7 +19,7 @@ const CurrentData = (props) => {
 
     const getCurrentData = async () => {
         try {
-            console.log(user.token);
+            // console.log(user.token);
             await axios.get(Apiservice + "/content/request", {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
@@ -33,7 +33,7 @@ const CurrentData = (props) => {
     }
 
     const actions = (type, data, key) => {
-        console.log(data._id);
+        // console.log(data._id);
 
         if (data.type === "Playlist") {
             isPlaylist("true");
@@ -61,9 +61,9 @@ const CurrentData = (props) => {
     }
 
     const deleteData = async () => {
-        console.log(fileID, playlist);
+        // console.log(fileID, playlist);
         try {
-            console.log()
+            // console.log()
             await axios.delete(Apiservice + "/content/upload/" + playlist + "/" + fileID).then((res) => {
                 exitDelete();
                 props.refresh();
@@ -245,7 +245,7 @@ const CurrentData = (props) => {
                         })
                         }
                         {data !== null && !props.courseCode && type && !filter_desc && !semester && data.map((val, index) => {
-                            console.log(type);
+                            // console.log(type);
                             if (val.type === type) {
                                 return (
                                     <tr key={index}>

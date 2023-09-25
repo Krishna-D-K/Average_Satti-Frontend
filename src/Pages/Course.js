@@ -13,7 +13,7 @@ export default function Course() {
   useEffect(() => {
     try {
       axios.get(Apiservice + "/courses/").then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
       }).then((res) => {
 

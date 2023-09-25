@@ -43,7 +43,7 @@ function Home() {
       isLoading(false);
     })
   }
-  console.log(admins);
+  // console.log(admins);
   useEffect(() => {
     getData();
   }, []);
