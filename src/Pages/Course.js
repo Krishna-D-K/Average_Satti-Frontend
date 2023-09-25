@@ -43,7 +43,7 @@ export default function Course() {
         </div>
       </div>
       <div className='course-grid'>
-        <table className="rwd-table">
+        {data && <table className="rwd-table">
           <thead>
             <tr>
               <th>S.No</th>
@@ -55,7 +55,7 @@ export default function Course() {
             </tr>
           </thead>
           <tbody>
-            {data !== null && !course && !semester && data.map((val, index) => {
+            {!course && !semester && data.map((val, index) => {
               return <tr key={index}>
                 <td data-th="S.No" style={{ "color": "wheat" }}>{index + 1}</td>
                 <td data-th="Semester">{val.semester}</td>
@@ -65,7 +65,7 @@ export default function Course() {
                 <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
               </tr>
             })}
-            {data !== null && !course && semester && data.filter((value) => value.semester === semester).map((val, index) => {
+            {!course && semester && data.filter((value) => value.semester === semester).map((val, index) => {
               return <tr key={index}>
                 <td data-th="S.No" style={{ "color": "wheat" }}>{index + 1}</td>
                 <td data-th="Semester">{val.semester}</td>
@@ -75,7 +75,7 @@ export default function Course() {
                 <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
               </tr>
             })}
-            {data !== null && course && !semester && data.filter((value) => {
+            {course && !semester && data.filter((value) => {
               if (value.courseName.toLowerCase().includes(course.toLowerCase())) {
                 return value;
               }
@@ -89,7 +89,7 @@ export default function Course() {
                 <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
               </tr>
             })}
-            {data !== null && course && semester && data.filter((value) => {
+            {course && semester && data.filter((value) => {
               if (value.courseName.toLowerCase().includes(course.toLowerCase()) && value.semester === semester) {
                 return value;
               }
@@ -103,9 +103,9 @@ export default function Course() {
                 <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
               </tr>
             })}
-            {data === null && <Loader />}
           </tbody>
-        </table>
+        </table>}
+        {!data && <div><Loader /></div>}
       </div>
     </div>
   )

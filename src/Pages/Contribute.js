@@ -33,7 +33,7 @@ export default function Contribute() {
     e.preventDefault();
     setIsLoading(true);
     const formdata = new FormData();
-    console.log(file);
+    // console.log(file);
     formdata.append("file", file);
     formdata.append("type", type);
     formdata.append("name", name);
@@ -50,7 +50,7 @@ export default function Contribute() {
           "Content-Type": "multipart/form-data" // formdata can only be passed to backend if we have multer installed as package.
         }
       }).then((res) => {
-        console.log(res);
+        // console.log(res);
         setIsLoading(false);
         if (res.status === 200) {
           resetData();
