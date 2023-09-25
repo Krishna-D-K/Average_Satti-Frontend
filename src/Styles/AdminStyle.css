@@ -1,167 +1,207 @@
-.admin-container{
-    margin: 4rem 0 2rem 0;
-    height: 120vh;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.admin-container {
+  margin: 0rem 0 2rem 0;
+  height: 120vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.admin-sidebar{
-    width: 20%;
-    box-sizing: border-box;
-    border-right: 3px solid #8080805e;
-    border-width: 0.2rem;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
+
+.admin-sidebar {
+  width: 20%;
+  box-sizing: border-box;
+  border-right: 3px solid #8080805e;
+  border-width: 0.2rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
 }
-.admin-dashboard{
-    width: 95%;
+
+.admin-dashboard {
+  width: 95%;
 }
-.admin-dashboard-content{
-    height: 95vh;
-    overflow-y: scroll;
+.admin-dashboard h1{
+  font-family: 'Laila', sans-serif;
 }
-.admin-image{
-    height: 30%;
+.admin-dashboard-content {
+  height: 95vh;
+  overflow-y: scroll;
 }
-.admin-list ul{
-    list-style: none;
-    font-size: 1.3rem;
-    color: #ff8d1e;
-    padding: 0;
+
+.admin-image {
+  height: 30%;
 }
-.admin-list li{
-    border-bottom: 2px solid #9695955e;
-    background-color: #8080805e;
-    padding: 0.3rem 1.2rem;
+
+.admin-list ul {
+  list-style: none;
+  font-size: 1.3rem;
+  color: #ff8d1e;
+  padding: 0;
 }
-.admin-list li:hover{
-    background-color: #8080808a;
-    cursor: pointer;
+
+.admin-list li {
+  font-family: 'Laila', sans-serif;
+  border-bottom: 2px solid #9695955e;
+  background-color: #8080805e;
+  padding: 0.3rem 1.2rem;
 }
+
+.admin-list li:hover {
+  background-color: #8080808a;
+  cursor: pointer;
+}
+
 .gradient-custom {
-    /* fallback for old browsers */
-    background: #f6d365;
+  /* fallback for old browsers */
+  background: #f6d365;
 
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
 
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
 
 #mySidenav li {
-    position: fixed; /* Position them relative to the browser window */
-    left: -10%; /* Position them outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
-    padding: 15px 15px 15px 0; /* 15px padding */
-    width: 14%; /* Set a specific width */
-    text-decoration: none; /* Remove underline */
-    font-size: 1.2rem; /* Increase font size */
-    color: white; /* White text color */
-    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
-  }
-  
-  #mySidenav li:hover {
-    left: 0; /* On mouse-over, make the elements appear as they should */
-  }
-  
-  /* The about link: 20px from the top with a green background */
-  #profile-card {
-    top: 10vh;
-    height: 33vh;
-    background-color: #555;
-  }
-  
-  #profile {
-    top: 43vh;
-    background-color: #555; /* Blue */
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  #courses {
-    top: 51.45vh;
-    background-color: #555; /* Red */
-    display: flex;
-    justify-content: flex-end;
+  position: fixed;
+  /* Position them relative to the browser window */
+  left: -10%;
+  /* Position them outside of the screen */
+  transition: 0.3s;
+  /* Add transition on hover */
+  padding: 15px 15px 15px 0;
+  /* 15px padding */
+  width: 14%;
+  /* Set a specific width */
+  text-decoration: none;
+  /* Remove underline */
+  font-size: 1.2rem;
+  /* Increase font size */
+  color: white;
+  /* White text color */
+  border-radius: 0 5px 5px 0;
+  /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav li:hover {
+  left: 0;
+  /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#profile-card {
+  top: 10vh;
+  height: 33vh;
+  background-color: #555;
+}
+
+#profile {
+  top: 43vh;
+  background-color: #555;
+  /* Blue */
+  display: flex;
+  justify-content: flex-end;
+}
+
+#courses {
+  top: 51.45vh;
+  background-color: #555;
+  /* Red */
+  display: flex;
+  justify-content: flex-end;
+}
+
+#current-data {
+  top: 59.9vh;
+  background-color: #555;
+  /* Red */
+  display: flex;
+  justify-content: flex-end;
+}
+
+#accounts {
+  top: 68.35vh;
+  background-color: #555;
+  /* Light Black */
+  display: flex;
+  justify-content: flex-end;
+}
+
+#add-user {
+  top: 76.8vh;
+  background-color: #555;
+  /* Light Black */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.correct-display {
+  display: flex;
+  justify-content: center;
+}
+
+.fa-user {
+  content: "\f007";
+  display: flex;
+  align-items: center;
+}
+
+.fa-list-ul {
+  content: "\f0ca";
+  display: flex;
+  align-items: center;
+}
+
+.fa-database {
+  content: "\f1c0";
+  display: flex;
+  align-items: center;
+}
+
+.fa-address-card {
+  content: "\f2bb";
+  display: flex;
+  align-items: center;
+}
+
+.fa-square-plus {
+  content: "\f0fe";
+  display: flex;
+  align-items: center;
+}
+
+#mySubnav {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .admin-container {
+    margin-top: 0rem;
   }
 
-  #current-data {
-    top: 59.9vh;
-    background-color: #555; /* Red */
-    display: flex;
-    justify-content: flex-end;
+  .admin-container h1 {
+    font-size: 1.2rem;
+    font-family: 'Laila', sans-serif;
   }
 
- #accounts {
-    top: 68.35vh;
-    background-color: #555; /* Light Black */
-    display: flex;
-    justify-content: flex-end;
+  .admin-dashboard-content h2 {
+    font-size: 1.2rem;
   }
-  
-  #add-user {
-    top: 76.8vh;
-    background-color: #555; /* Light Black */
-    display: flex;
-    justify-content: flex-end;
-  }
-  .correct-display{
-    display: flex;
-    justify-content: center;
-  }
-  .fa-user{
-    content: "\f007";
-    display: flex;
-    align-items: center;
-  }
-  .fa-list-ul{
-    content: "\f0ca";
-    display: flex;
-    align-items: center;
-  }
-  .fa-database{
-    content: "\f1c0";
-    display: flex;
-    align-items: center;
-  }
-  .fa-address-card{
-    content: "\f2bb";
-    display: flex;
-    align-items: center;
-  }
-  .fa-square-plus{
-    content: "\f0fe";
-    display: flex;
-    align-items: center;
-  }
-  #mySubnav{
+
+  #mySidenav {
     display: none;
   }
 
-  @media (max-width: 480px) {
-    .admin-container{
-      margin-top: 4rem;
-    }
-    .admin-container h1{
-      font-size: 2rem;
-    }
-    .admin-dashboard-content h2{
-      font-size: 1.5rem;
-    }
-    #mySidenav{
-      display: none;
-    }
-    #mySubnav{
-      display: block;
-    }
-    .nav-pills li{
-      padding: 0.2rem 0.5rem;
-    }
-    .g-0:first-child{
-      width: 100%;
-      margin: auto;
-      border-radius: 0.5rem;
-    }
+  #mySubnav {
+    display: block;
   }
+
+  .nav-pills li {
+    padding: 0.2rem 0.5rem;
+  }
+
+  .g-0:first-child {
+    width: 100%;
+    margin: auto;
+    border-radius: 0.5rem;
+  }
+}

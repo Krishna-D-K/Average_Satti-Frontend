@@ -76,10 +76,10 @@
 }
 @media (max-width: 480px) {
     .course-container{
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
     .course-container h1{
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
     .course-grid {
         display: flex;
@@ -94,17 +94,17 @@
         justify-content: flex-start;
     }
     .courses-filter div h5{
-        font-size: 1rem;
+        font-size: 0.8rem;
         display: block;
         color: #ff8d1e;
     }
     #exampleFormControlSelect1{
         margin: 0.2rem 1rem;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     #courses-filter-input{
-        margin: 0.5rem auto;
-        font-size: 0.9rem;
+        margin: 0.2rem auto;
+        font-size: 0.8rem;
     }
     .courses-filter div input{
         font-size: 0.8rem;
@@ -116,5 +116,10 @@
     }
     #exampleFormControlSelect12{
         font-size: 0.7rem;
+    }
+    .rwd-table tr th, .rwd-table tr td{
+        font-size: 0.7rem;
+        font-weight: normal;
+        margin: 0.1rem 0.4rem;
     }
 }

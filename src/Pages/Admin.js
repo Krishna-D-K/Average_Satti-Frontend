@@ -84,7 +84,7 @@ export default function Admin() {
                             <hr style={{ "height": "0.2rem", "width": "90%", "backgroundColor": "#ffffff42", "borderRadius": "0.1rem" }} />
                         </div>
                         <div className="admin-dashboard-content">
-                            <h2 style={{ "textAlign": "center", "color": "#ff8d1e" }}>{title}</h2> <br />
+                            <h2 style={{ "textAlign": "center", "color": "#ff8d1e", fontFamily: 'Laila, sans-serif'}}>{title}</h2> <br />
                             {title === "Profile" && <Profile />}
                             {title === "Courses" && <Courses details={setDetails} title={() => setTitle("Add Course")} refresh={() => { setTitle(" "); setTimeout(() => setTitle("Courses"), 100) }} />}
                             {title === "Add Course" && <AddCourse exit={() => setTitle("Courses")} />}

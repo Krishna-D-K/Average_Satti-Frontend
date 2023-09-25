@@ -48,6 +48,7 @@
   color: aliceblue;
   margin: 0 auto;
   width: 90%;
+  font-family: 'Laila', sans-serif;
 }
 
 .content-data {
@@ -91,6 +92,9 @@
   float: left;
   color: wheat;
 }
+.accordion-icons a i, .accordion-icons i{
+  margin-right: 1.5rem;
+}
 .accordion-icons>i , .accordion-icons>a {
   color: wheat;
   font-size: 1rem;
@@ -106,6 +110,10 @@
   cursor: pointer;
   ;
 }
+.indi-contri span, .indi-contri a{
+  font-family: 'Laila', sans-serif;
+  font-size: 0.8rem;
+}
 
 @media (max-width: 480px) {
   .content-details {
@@ -114,8 +122,45 @@
     justify-content: flex-start;
     font-size: 0.8rem;
   }
-
   .list-group-item p {
     font-size: 1rem;
+  }
+  .content-heading h2{
+    font-size: 1rem;
+  }
+  .content-heading hr{
+    width: 60%;
+  }
+  .content-details p{
+    margin-bottom: 0.4rem;
+  }
+  .content-data{
+    width: 100%;
+  }
+  .content-contribute{
+    font-size: 0.8rem;
+  }
+  .accordion-heading{
+    font-size: 0.9rem;
+  }
+  .accordion-header button{
+    padding: 0.5rem;
+  }
+  .accordion-body{
+    padding: 0.5rem;
+  }
+  .accordion-body ul li{
+    padding: 0.1rem 0;
+    font-size: 0.8rem;
+  }
+  .list-group-item p{
+    font-size: 0.8rem;
+  }
+  .accordion-icons a i, .accordion-icons i{
+    margin-right: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .indi-contri span, .indi-contri a{
+    font-size: 0.7rem;
   }
 }

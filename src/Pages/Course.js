@@ -62,7 +62,7 @@ export default function Course() {
                 <td data-th="Code" className='course-link'><Link to={`/content/${val.courseCode}`}>{val.courseCode}</Link></td>
                 <td data-th="Title">{val.courseName}</td>
                 <td data-th="Credits">{val.credits}</td>
-                <td data-th="Professors">{val.professor1} &emsp; {val.professor2}</td>
+                <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
               </tr>
             })}
             {data !== null && !course && semester && data.filter((value) => value.semester === semester).map((val, index) => {
@@ -72,7 +72,7 @@ export default function Course() {
                 <td data-th="Code" className='course-link'><Link to={`/content/${val.courseCode}`}>{val.courseCode}</Link></td>
                 <td data-th="Title">{val.courseName}</td>
                 <td data-th="Credits">{val.credits}</td>
-                <td data-th="Professors">{val.professor1} &emsp; {val.professor2}</td>
+                <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
               </tr>
             })}
             {data !== null && course && !semester && data.filter((value) => {
@@ -86,7 +86,21 @@ export default function Course() {
                 <td data-th="Code"><Link to={`/content/${val.courseCode}`}>{val.courseCode}</Link></td>
                 <td data-th="Title">{val.courseName}</td>
                 <td data-th="Credits">{val.credits}</td>
-                <td data-th="Professors">{val.professor1} &emsp; {val.professor2}</td>
+                <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
+              </tr>
+            })}
+            {data !== null && course && semester && data.filter((value) => {
+              if (value.courseName.toLowerCase().includes(course.toLowerCase()) && value.semester === semester) {
+                return value;
+              }
+            }).map((val, index) => {
+              return <tr key={index}>
+                <td data-th="S.No" style={{ "color": "wheat" }}>{index + 1}</td>
+                <td data-th="Semester">{val.semester}</td>
+                <td data-th="Code"><Link to={`/content/${val.courseCode}`}>{val.courseCode}</Link></td>
+                <td data-th="Title">{val.courseName}</td>
+                <td data-th="Credits">{val.credits}</td>
+                <td data-th="Professors">{val.professor1}{val.professor2 && `, ${val.professor2}`}</td>
               </tr>
             })}
             {data === null && <Loader />}

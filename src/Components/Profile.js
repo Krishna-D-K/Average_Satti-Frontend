@@ -74,10 +74,10 @@ function Profile() {
                                     <div className="row g-0">
                                         <div className="col-md-4 gradient-custom text-center text-white" style={{ borderRadius: '.5rem' }}>
                                             <img src={address} alt="Avatar" className="img-fluid-my-5"/>
-                                            {user.name && <h5>{user.name}</h5>}
-                                            {user.rollNo && <p>{user.rollNo}</p>}
-                                            <p>{user.role}</p> <br />
-                                            {!edit && <p style={{ "color": "#28a745" }} className="admin-profile-edit" onClick={() => setEdit(true)}>
+                                            {user.name && <h5 style={{fontFamily:'Laila, sans-serif'}}>{user.name}</h5>}
+                                            {user.rollNo && <p style={{fontFamily:'Laila, sans-serif'}}>{user.rollNo}</p>}
+                                            <p style={{fontFamily:'Laila, sans-serif'}}>{user.role}</p> <br />
+                                            {!edit && <p style={{ "color": "#28a745", fontFamily:'Laila, sans-serif'}} className="admin-profile-edit" onClick={() => setEdit(true)}>
                                                 Edit&nbsp;
                                                 <i className="fa-regular fa-pen-to-square fa-lg" style={{ "margin": "0 0.8rem 0 0", "color": "#28a745" }} />
                                             </p>}
@@ -94,17 +94,17 @@ function Profile() {
                                         </div>
                                         <div className="col-md-8">
                                             <div className="card-body p-4">
-                                                <h6>Information</h6>
+                                                <h6 style={{fontFamily:'Laila, sans-serif'}}>Information</h6>
                                                 <hr className="mt-0 mb-4" />
                                                 <div className="">
                                                     <div className="">
-                                                        <p className="text-muted"><span style={{ "fontSize": "1rem", "color": "black" }}>Name : </span>
+                                                        <p className="text-muted" style={{fontFamily:'Laila, sans-serif'}}><span style={{ "fontSize": "1rem", "color": "black", "fontFamily":'Laila, sans-serif' }}>Name : </span>
                                                             {!edit && user.name}
                                                             {edit && <input type="text" value={name} onChange={(e) => setName(e.target.value)} />}
                                                         </p>
                                                     </div>
                                                     <div className="mb-3">
-                                                        <p className="text-muted"><span style={{ "fontSize": "1.0rem", "color": "black" }}>Phone</span> :
+                                                        <p className="text-muted" style={{fontFamily:'Laila, sans-serif'}}><span style={{ "fontSize": "1.0rem", "color": "black", "fontFamily":'Laila, sans-serif' }}>Phone</span> :
                                                             {!edit && user.phone}
                                                             {edit && <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />}
                                                         </p>
@@ -114,29 +114,29 @@ function Profile() {
                                                 <hr className="mt-0 mb-4" />
                                                 <div className="">
                                                     <div className="">
-                                                        <h6>Institute Email</h6>
-                                                        <p className="text-muted">
+                                                        <h6 style={{fontFamily:'Laila, sans-serif'}}>Institute Email</h6>
+                                                        <p className="text-muted"  style={{fontFamily:'Laila, sans-serif'}}>
                                                             {!edit && user.instiMail}
                                                             {edit && <input type="text" value={imail} onChange={(e) => setImail(e.target.value)} />}
                                                         </p>
                                                     </div>
                                                     <div className="">
-                                                        <h6>Personal Email</h6>
-                                                        <p className="text-muted">
+                                                        <h6 style={{fontFamily:'Laila, sans-serif'}}>Personal Email</h6>
+                                                        <p className="text-muted" style={{fontFamily:'Laila, sans-serif'}}>
                                                             {!edit && user.email}
                                                             {edit && <input type="text" value={mail} onChange={(e) => setMail(e.target.value)} />}
                                                         </p>
                                                     </div>
                                                     <div className="">
-                                                        <h6>Facebook</h6>
-                                                        {!edit && user.fbLink && <p className="text-muted">{user.fbLink}</p>}
-                                                        {!edit && !user.fbLink && <p className="text-muted">None</p>}
+                                                        <h6 style={{fontFamily:'Laila, sans-serif'}}>Facebook</h6>
+                                                        {!edit && user.fbLink && <p className="text-muted" style={{fontFamily:'Laila, sans-serif'}}>{user.fbLink}</p>}
+                                                        {!edit && !user.fbLink && <p className="text-muted" style={{fontFamily:'Laila, sans-serif'}}>None</p>}
                                                         {edit && <input type="text" value={fb} onChange={(e) => setFb(e.target.value)} />}
                                                     </div>
                                                     <div className="">
-                                                        <h6>LinkedIn</h6>
-                                                        {!edit && user.linkedinLink && <p className="text-muted">{user.linkedinLink}</p>}
-                                                        {!edit && !user.linkedinLink && <p className="text-muted">None</p>}
+                                                        <h6 style={{fontFamily:'Laila, sans-serif'}}>LinkedIn</h6>
+                                                        {!edit && user.linkedinLink && <p className="text-muted" style={{fontFamily:'Laila, sans-serif'}}>{user.linkedinLink}</p>}
+                                                        {!edit && !user.linkedinLink && <p className="text-muted" style={{fontFamily:'Laila, sans-serif'}}>None</p>}
                                                         {edit && <input type="text" value={lid} onChange={(e) => setLid(e.target.value)} />}
                                                     </div>
                                                     {edit && <div className="">

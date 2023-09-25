@@ -23,7 +23,7 @@ export default function Login() {
                         <div className="col-md-9 col-lg-6 col-xl-5">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" className="img-fluid" alt="err_loading_image" />
                         </div>
-                        <div className="col-md-8 col-sm-6 col-xl-4 offset-xl-1">
+                        <div className="col-md-8 col-sm-6 col-xl-3 offset-l-1">
                             <form onSubmit={loginUser}>
 
                                 <h3 className="divider d-flex align-items-center my-4" style={{"color": "cornflowerblue", "font-family":"'Laila', sans-serif"}}>Login</h3>

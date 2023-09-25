@@ -59,11 +59,11 @@ export default function Content() {
                                                             {element.description}
                                                         </p>
                                                         <div className="accordion-icons" style={{ "float": "right" }}>
-                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" data-toggle="tooltip" title="Details"></i>
                                                             <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                                <i className="fa-solid fa-face-frown" data-toggle="tooltip" title="Unhappy ??" />
                                                             </a>
 
                                                         </div>
@@ -71,7 +71,7 @@ export default function Content() {
                                                 )
                                             })}
                                         </ul>
-                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                        {details !== null && <div className='indi-contri' style={{ "padding": "0rem 1rem" }}><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1">
@@ -85,18 +85,18 @@ export default function Content() {
                                                             {element.description}
                                                         </p>
                                                         <div className="accordion-icons" style={{ "float": "right" }}>
-                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" data-toggle="tooltip" title="Details"></i>
                                                             <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                                <i className="fa-solid fa-face-frown" data-toggle="tooltip" title="Unhappy ??" />
                                                             </a>
                                                         </div>
                                                     </li>
                                                 )
                                             })}
                                         </ul>
-                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                        {details !== null && <div className='indi-contri' style={{ "padding": "0rem 1rem" }}><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2">
@@ -110,18 +110,18 @@ export default function Content() {
                                                             {element.description}
                                                         </p>
                                                         <div className="accordion-icons" style={{ "float": "right" }}>
-                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" data-toggle="tooltip" title="Details"></i>
                                                             <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                                <i className="fa-solid fa-face-frown" data-toggle="tooltip" title="Unhappy ??" />
                                                             </a>
                                                         </div>
                                                     </li>
                                                 )
                                             })}
                                         </ul>
-                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                        {details !== null && <div className='indi-contri' style={{ "padding": "0rem 1rem" }}><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3">
@@ -135,18 +135,18 @@ export default function Content() {
                                                             {element.description}
                                                         </p>
                                                         <div className="accordion-icons" style={{ "float": "right" }}>
-                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" data-toggle="tooltip" title="Details"></i>
                                                             <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                                <i className="fa-solid fa-face-frown" data-toggle="tooltip" title="Unhappy ??" />
                                                             </a>
                                                         </div>
                                                     </li>
                                                 )
                                             })}
                                         </ul>
-                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                        {details !== null && <div className='indi-contri' style={{ "padding": "0rem 1rem" }}><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4">
@@ -160,18 +160,18 @@ export default function Content() {
                                                             {element.description}
                                                         </p>
                                                         <div className="accordion-icons" style={{ "float": "right" }}>
-                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Download"></i></a>
-                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Open"></i></a>
+                                                            <a href={element.downloadUrl} rel='noreferrer'><i className="fa-solid fa-cloud-arrow-down" data-toggle="tooltip" title="Download"></i></a>
+                                                            <i className="fa-solid fa-info" data-toggle="tooltip" title="Details"></i>
                                                             <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                                <i className="fa-solid fa-face-frown" data-toggle="tooltip" title="Unhappy ??" />
                                                             </a>
                                                         </div>
                                                     </li>
                                                 )
                                             })}
                                         </ul>
-                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                        {details !== null && <div className='indi-contri' style={{ "padding": "0rem 1rem" }}><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="5">
@@ -185,17 +185,17 @@ export default function Content() {
                                                             {element.description}
                                                         </p>
                                                         <div className="accordion-icons" style={{ "float": "right" }}>
-                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Open"></i></a>
-                                                            <i className="fa-solid fa-info" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Details"></i>
+                                                            <a href={element.publicUrl} target="_blank" rel='noreferrer'><i className="fa-solid fa-arrow-up-right-from-square" data-toggle="tooltip" title="Open"></i></a>
+                                                            <i className="fa-solid fa-info" data-toggle="tooltip" title="Details"></i>
                                                             <a href={`mailto:iwannabeflash@gmail.com?subject=Unsatisfied over the course content&body=Course Code : ${details.courseCode}%0D%0ADescription : ${element.description}%0D%0AYour grievance:%20`} target="_blank" rel="noreferrer">
-                                                                <i className="fa-solid fa-face-frown" style={{ "marginRight": "1.5rem" }} data-toggle="tooltip" title="Unhappy ??" />
+                                                                <i className="fa-solid fa-face-frown" data-toggle="tooltip" title="Unhappy ??" />
                                                             </a>
                                                         </div>
                                                     </li>
                                                 )
                                             })}
                                         </ul>
-                                        {details !== null && <div style={{ "padding": "0rem 1rem" }}><br /><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
+                                        {details !== null && <div className='indi-contri' style={{ "padding": "0rem 1rem" }}><span style={{ "color": "aliceblue" }}>Not what you're looking for?</span>&emsp;<Link to={`/contribute/${details.courseCode}`}>Contribute</Link></div>}
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>

@@ -3,6 +3,7 @@ import "../Styles/LoaderStyle.css";
 function Loader() {
     return (
         <>
+        <div className="loader-bg">
             <div className="loader-container">
                 <svg id="loading" viewBox="0 0 100 80">
                     {/* 100 x 80 viewport because we are missing the bottom center rectangle */}
@@ -19,6 +20,7 @@ function Loader() {
                 </svg>
                 <span style={{"color": "whitesmoke", "marginTop": "1rem"}}>Hang on there...!!</span>
             </div>
+        </div>
         </>
     )
 }

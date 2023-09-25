@@ -51,6 +51,13 @@
     transform: translate(0,0);
   }
 }
+.loader-bg{
+  background-color: black;
+  z-index: 1021;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .loader-container{
   display: inline-flex;
   flex-direction: column;

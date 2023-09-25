@@ -1,13 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Apiservice from "../Apiservice";
-import Book from "../Components/Book";
-import PageTitle from "../Components/PageTitle";
 import "../Styles/HomeStyle.css";
-import imageUrl from "../images/blue-tick.png";
-import { Link } from "react-router-dom";
 import Loader from "../Components/Loader";
 import imageTemplate from "../images/avatar.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [coursesCount, setCoursesCount] = useState("");
@@ -46,7 +43,7 @@ function Home() {
       isLoading(false);
     })
   }
-
+  console.log(admins);
   useEffect(() => {
     getData();
   }, []);
@@ -70,11 +67,14 @@ function Home() {
                     Posted on: 12/06/2023
                   </div>
                   <div className="blogContent">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum maiores laudantium perspiciatis unde error esse eos, quos, reprehenderit enim necessitatibus excepturi, illo sequi molestias accusamus molestiae odit animi earum eligendi?
-                    Odit aliquam excepturi sunt incidunt corporis dignissimos nesciunt similique. Quam doloribus ex culpa voluptatum voluptate nulla, illum nesciunt quidem repellat eum expedita, nisi reprehenderit, eaque cupiditate nobis. Suscipit, magni maxime?
-                    Obcaecati at alias quos cupiditate enim quas dolor est quis earum architecto. Recusandae quaerat vero sint exercitationem dignissimos soluta fuga sequi! Nobis ratione ullam perspiciatis nihil ducimus similique, eligendi soluta.
-                    Fuga tenetur atque nulla sint earum et omnis hic at cupiditate eius debitis architecto praesentium blanditiis, odio exercitationem. Dolorem voluptatem repellat libero quisquam illo reiciendis expedita quae asperiores aliquam perspiciatis!
-                    Voluptate pariatur a hic obcaecati repellendus. Itaque, deleniti tempore eius pariatur facere alias sapiente magnam, est, veritatis quidem eligendi sed sint nesciunt quas commodi? Vel voluptatibus ipsam facilis accusantium beatae.
+                    Glad to see you here. This site is intended to provide effective and up-to-date study materials related to Electrical Engineering courses. Try to explore the site in following ways:
+                      <li>Try to find the courses in the <Link to='/courses'>Courses</Link> section of the navbar. Get all related materials by clicking on the specific course.</li>
+                      <li>If you wish to contribute material to a specific course, go to the specific course, and click on Contribute to contribute. </li>
+                      <li>Since the contributed material is up on the website instantly, try <span style={{color: "cornflowerblue"}}>NOT TO SPAM</span> with irrelevant materials.</li>
+                      <li>The admins have the right to add or delete any course, any material on the site. Contact admins convey any thoughts about it.</li>
+                      <li>The contributors' list is availabe on the <Link to='/contributors'>Contributors</Link> section of the navbar.</li>
+                    Finally, we are open to any contribution to the codebase via the <a href="https://github.com/Krishna-D-K/Average_Satti-Frontend" target="_blank" rel="noreferrer">Github</a> link provided in navbar. <br />
+                    That's it! You're now part of this awesome community. If you have any questions or feedback, feel free to contact us anytime. Thanks for joining!
                   </div>
                 </div>
                 <div className="blog">
@@ -104,8 +104,13 @@ function Home() {
                 </div>
               </div>
               <div className="rightBox">
-                <div className="recentAct">
-                  <div>RECENTLY UPLOADED </div>
+                <div className="recentAdmin">
+                  <div>CURRENT ADMINS </div>
+                  <ul>
+                    {admins && admins.map((val,index)=>{
+                      return <li><a href={`mailto:${val.email}`}>{val.name}</a></li>
+                    })}
+                  </ul>
                 </div>
               </div>
               <div className="rightBox">
@@ -121,7 +126,7 @@ function Home() {
   }
   else {
     return (
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "99vw", height: "99vh", margin: "auto auto" }}>
+      <div style={{position:"absolute", top:0, left:0, zIndex:1021, backgroundColor:"black", display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", height: "100vh", margin: "auto auto" }}>
         <Loader />
       </div>
     )

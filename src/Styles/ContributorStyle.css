@@ -33,14 +33,18 @@
 
 @media (max-width: 480px){
     .contributor-container{
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
-    .contributor-container>h2{
-        font-size: 2rem;
+    .contributorHeading h1{
+        font-size: 1rem;
+    }
+    .contributorHeading hr{
+        width: 60%;
     }
     .contributor-message{
-        width: 90%;
-        font-size: 1.1rem;
+        width: 95%;
+        font-size: 0.8rem;
+        margin: 1rem auto;
     }
     .col-md-8 form h1{
         font-size: 2rem;
